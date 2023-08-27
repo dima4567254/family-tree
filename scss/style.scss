@@ -1,0 +1,343 @@
+@use "sass:math";
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+@import 'libs';
+
+// uk
+
+// pedigree текст или список
+// prices список из списков
+// prices__period п надо илим нет
+// recommendations сократить название и переименовать папку
+
+// посмотреть про калк в курсе вейб
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: transparent;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 15px 15px 15px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+    }
+
+    &__box {
+        margin-right: 40px;
+    }
+
+    &__links span {
+        color: rgba(93, 94, 106);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        margin-right: 20px;
+    }
+
+    &__link {
+        text-decoration: revert;
+        line-height: 25px;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.66);
+        transition: color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            color: rgb(151, 71, 27);
+
+        }
+
+        &:active {
+            color: $active;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__tel {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        color: rgb(33, 36, 61);
+        text-decoration: revert;
+        transition: color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            color: rgb(151, 71, 27);
+
+        }
+
+        &:active {
+            color: $active;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__mail {
+        color: rgba(93, 94, 106);
+        line-height: 28px;
+        font-size: 18px;
+        font-weight: 400;
+        transition: color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            color: rgb(151, 71, 27);
+
+        }
+
+        &:active {
+            color: $active;
+        }
+    }
+
+
+    &__link {}
+
+    &__logo {}
+}
+
+.logo {
+    &__header {
+        width: 315px;
+        height: 80px;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    &__btn {
+        display: none;
+    }
+
+    &__items {
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+    }
+
+    &__item {}
+
+    &__link {
+        transition: color 0.5s;
+        color: rgb(20, 20, 20);
+        font-size: 18px;
+        font-weight: 400;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            color: rgb(151, 71, 27);
+
+        }
+
+        &:active {
+            color: $active;
+        }
+
+
+    }
+
+    &__link--active {}
+}
+
+
+.intro {
+    background-image: url('../images/intro-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // height: calc(57vh + 150px);
+    height: 73vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+
+    // height: 100vh;
+
+    &__box {
+        max-width: 650px;
+        // text-align: center;
+    }
+
+    &__title {
+        font-size: 28px;
+        color: rgb(33, 36, 61);
+        font-weight: 700;
+        line-height: 35px;
+        margin-bottom: 80px;
+    }
+
+    &__title span {
+        color: rgb(151, 71, 27);
+    }
+
+    &__btn {
+        display: flex;
+        margin: 0 auto;
+        font-weight: 500;
+        line-height: 17px;
+        font-size: 23px;
+        border: 2px solid rgba(0, 0, 0, 0);
+        background-color: rgb(215, 56, 56);
+        padding: 18px 30px;
+        color: rgb(255, 255, 255);
+        transition: color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            background-color: rgb(151, 71, 27);
+        }
+
+        &:active {
+            color: $active;
+        }
+
+    }
+}
+
+.reviews {
+    &__title {
+        color: rgb(120, 81, 59);
+        font-size: 36px;
+        @include adaptiveValue("margin-bottom", 30, 20);
+        font-weight: 700;
+        line-height: 51px;
+        text-align: center;
+    }
+
+
+
+    &__items {}
+
+    &__item {}
+}
+
+
+
+
+
+
+.title {}
+
+.video {}
+
+.sr-only {}
+
+
+.btn {}
+
+.title {}
+
+.slider-casey__wrapper {
+    overflow: hidden;
+}
+
+/*медия всегда должны быть в низу */
+
+
+/*
+
+&__link {
+    color: $title;
+    font-family: $;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    outline-color: #000000;
+    outline-offset: 5px;
+    transition: color 0.5s;
+    &:focus {
+        color: $green;
+    }
+
+    &:hover {
+        color: $ac;
+    }
+
+    &--active {
+        color: $ac;
+    }
+}
+
+*/
+
+/*.video {
+    height: 425px;
+    max-width: 1185px;
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.7s,
+        border 0.5s;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    &:focus {
+        outline: solid $ac;
+    }
+
+    &:hover {
+        opacity: 0.4;
+        border: 2px solid $black;
+    }
+
+    &:active {
+        color: $active;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/play.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100px;
+        width: 100px;
+    }
+}*/
+
+@import 'media';

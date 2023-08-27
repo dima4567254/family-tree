@@ -1,0 +1,204 @@
+$maxWidthContainer:1200;
+// $maxWidth:1920;
+$containerWidth:1100;
+$minWidth:320; //ставить что бы считало минимальное до этого
+// $keepSize:0;
+// $maxWidth:0;
+// @include adaptiv-value( "padding" 50, 20, 0, );
+
+// Адаптивное свойство (clamp)
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+    @if ($startSize==0) {
+        $startSize: 0.000001;
+    }
+
+    @if ($minSize==0) {
+        $minSize: 0.000001;
+    }
+
+    // Для calc();
+    $addSize: math.div($startSize - $minSize, 16);
+
+
+
+    @if ($widthFrom==$containerWidth and $maxWidthContainer==0) {
+        $widthFrom: $maxWidth;
+    }
+
+    // Брейк-поинты в EM
+    $widthFromMedia: em($widthFrom);
+    $widthToMedia: em($widthTo);
+
+    // Формула плавающего значения
+    // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+    $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+    $yIntersection: -$widthTo * $slope+$minSize;
+
+    @if ($yIntersection==0) {
+        $yIntersection: 0.000001;
+    }
+
+    $flyValue: #{rem($yIntersection)}" + "#{$slope * 100}vw;
+
+    // Получение значения свойства
+    $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+
+    // Если отрицательные значения
+    @if ($minSize > $startSize) {
+        $propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+    }
+
+    // Если поддерживается clamp();
+    @supports (#{$property}: $propertyValue) {
+        #{$property}: $propertyValue;
+    }
+
+    // Если не поддерживается clamp();
+    @supports not (#{$property}: $propertyValue) {
+        #{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+    }
+
+    // Устанавливаем значения по умолчанию
+    @if $widthFrom !=$containerWidth and $widthFrom !=$maxWidth and $keepSize !=1 and $keepSize !=2 {
+        @media (min-width: $widthFromMedia) {
+            #{$property}: inherit;
+        }
+    }
+
+    @if $widthTo !=$minWidth and $keepSize !=1 and $keepSize !=3 {
+        @media (max-width: $widthToMedia) {
+            #{$property}: inherit;
+        }
+    }
+}
+
+//Percent
+@function percent($px, $from) {
+    $result: math.div($px, $from) * 100%;
+    @return $result;
+}
+
+// !!!
+html {
+    font-size: 62.5%;
+
+    @media (max-width: 1200px) {
+        font-size: 50%;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 35%;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+body {
+    font-family: 'Poppins';
+    // font-size: 16px;
+    // font-weight: 400;
+    // font-size: 18px;
+    // line-height: 1.2;
+    // color: $black;
+    // letter-spacing: 0.6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/*
+.title {
+    @extend %title;
+}*/
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title {
+    // font-size: 36px;
+    // text-align: center;
+    // letter-spacing: 0.04em;
+    // text-transform: uppercase;
+    // color: $black3;
+
+    @media (max-width: 1200px) {
+        font-size: 34px;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 32px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 26px;
+    }
+
+    // &--bem {
+    //     margin-bottom: 70px;
+
+    //     @media (max-width: 1200px) {
+    //         margin-bottom: 60px;
+    //     }
+
+    //     @media (max-width: 992px) {
+    //         margin-bottom: 50px;
+    //     }
+
+    //     @media (max-width: 768px) {
+    //         margin-bottom: 40px;
+    //     }
+
+    //     @media (max-width: 576px) {
+    //         margin-bottom: 30px;
+    //     }
+    // }
+}
+
+.section {
+    // padding: 100px 0px;
+    @include adaptiveValue("padding-top", 100, 30);
+    @include adaptiveValue("padding-bottom", 100, 30);
+    
+
+    // &--bem {
+    //     padding: $padding-main 0;
+
+    //     @media (max-width: 992px) {
+    //         padding: $padding-992 0;
+    //     }
+
+    //     @media (max-width: 768px) {
+    //         padding: $padding-768 0;
+    //     }
+
+    //     @media (max-width: 576px) {
+    //         padding: $padding-576 0;
+    //     }
+    // }
+}
+
+// footer__link--indent

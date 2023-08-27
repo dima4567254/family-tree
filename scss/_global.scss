@@ -72,9 +72,26 @@ $minWidth:320; //ставить что бы считало минимально�
     }
 }
 
+@mixin line-height($font-size, $line-height, $px, ) {
+    line-height: ($line-height / $font-size);
+    font-size: ($font-size + $px);
+}
+
 //Percent
 @function percent($px, $from) {
     $result: math.div($px, $from) * 100%;
+    @return $result;
+}
+
+//REM
+@function rem($px) {
+    $result: math.div($px, 10) + rem;
+    @return $result;
+}
+
+//EM
+@function em($px, $current: 16) {
+    $result: math.div($px, $current) + em;
     @return $result;
 }
 
@@ -182,7 +199,7 @@ body {
     // padding: 100px 0px;
     @include adaptiveValue("padding-top", 100, 30);
     @include adaptiveValue("padding-bottom", 100, 30);
-    
+
 
     // &--bem {
     //     padding: $padding-main 0;
@@ -201,4 +218,87 @@ body {
     // }
 }
 
+.btn {
+    font-weight: 500;
+    line-height: 17px;
+    font-size: 23px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: rgb(215, 56, 56);
+    color: rgb(255, 255, 255);
+    transition: background-color 0.5s;
+
+    &:focus {
+        color: $focus;
+    }
+
+    &:hover {
+        background-color: rgb(151, 71, 27);
+    }
+
+    &:active {
+        color: $active;
+    }
+}
+
+
+.video {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 280px;
+    display: block;
+    position: relative;
+    border-radius: 6px;
+    transition: color 0.5s;
+    margin-bottom: 20px;
+
+    &:focus {
+        color: $focus;
+    }
+
+    &:hover {
+        .video__icon {
+            background-color: red;
+        }
+    }
+
+    &:active {
+        color: $active;
+    }
+
+    // попробовать обеденить слои иконок
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 65px;
+        height: 40px;
+        background: rgba(0, 0, 0, .55);
+        border-radius: 6px;
+        position: relative;
+
+        &::before {
+            // !!!отимизировать
+            content: "";
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            border-color: transparent transparent transparent #fff;
+            border-style: solid;
+            border-width: 9.5px 0 9.5px 17px;
+        }
+    }
+}
+
 // footer__link--indent
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}

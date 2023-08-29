@@ -158,6 +158,7 @@ body {
     // text-transform: uppercase;
     // color: $black3;
 
+
     @media (max-width: 1200px) {
         font-size: 34px;
     }
@@ -240,17 +241,14 @@ body {
     }
 }
 
-
 .video {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 280px;
     display: block;
     position: relative;
     border-radius: 6px;
     transition: color 0.5s;
-    margin-bottom: 20px;
 
     &:focus {
         color: $focus;
@@ -258,6 +256,7 @@ body {
 
     &:hover {
         .video__icon {
+            transition: background-color 0.5s;
             background-color: red;
         }
     }
@@ -265,6 +264,30 @@ body {
     &:active {
         color: $active;
     }
+    //    &__icon {
+    //        position: absolute;
+    //        top: 50%;
+    //        left: 50%;
+    //        transform: translateX(-50%);
+    //        width: 65px;
+    //        height: 40px;
+    //        background: rgba(0, 0, 0, .55);
+    //        border-radius: 6px;
+    //        position: relative;
+
+    //        &::before {
+    //            // !!!отимизировать
+    //            content: "";
+    //            position: absolute;
+    //            top: 30%;
+    //            left: 50%;
+    //            transform: translateX(-50%);
+    //            z-index: 999;
+    //            border-color: transparent transparent transparent #fff;
+    //            border-style: solid;
+    //            border-width: 9.5px 0 9.5px 17px;
+    //        }
+    //    }
 
     // попробовать обеденить слои иконок
     &__icon {

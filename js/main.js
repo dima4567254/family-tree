@@ -1,4 +1,16 @@
 
+
+$(function name(params) {
+    const Recommendations = new Swiper('.Recommendations', {
+        loop: true,
+        loopedslides: 1,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+})
 // $(function name(params) {
 //     const Recommendations = new Swiper('.Recommendations', {
 //         // slidesPerView: 1,

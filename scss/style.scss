@@ -257,63 +257,16 @@
         font-size: 15px;
         font-weight: 400;
         line-height: 22px;
-        color: rgb(93, 94, 106)
+        color: #cecece;
     }
 
     &__btn {
         padding: 18px 30px;
     }
-}
 
-.video {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 280px;
-    display: block;
-    position: relative;
-    border-radius: 6px;
-    transition: color 0.5s;
-    margin-bottom: 20px;
-
-    &:focus {
-        color: $focus;
-    }
-
-    &:hover {
-        .video__icon {
-            background-color: red;
-        }
-    }
-
-    &:active {
-        color: $active;
-    }
-
-    // попробовать обеденить слои иконок
-    &__icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 65px;
-        height: 40px;
-        background: rgba(0, 0, 0, .55);
-        border-radius: 6px;
-        position: relative;
-
-        &::before {
-            // !!!отимизировать
-            content: "";
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 999;
-            border-color: transparent transparent transparent #fff;
-            border-style: solid;
-            border-width: 9.5px 0 9.5px 17px;
-        }
+    &__video {
+        margin-bottom: 20px;
+        height: 280px;
     }
 }
 
@@ -398,7 +351,6 @@
         color: rgba(255, 255, 255, 0.7)
     }
 }
-
 
 //!!! наверное нельзя так секции называть
 .history {
@@ -503,6 +455,12 @@
 }
 
 .about {
+    &__box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 95px;
+    }
+
     &__title {
         color: rgb(235, 189, 126);
         font-size: 42px;
@@ -511,15 +469,16 @@
         position: relative;
         display: inline-block;
         margin: 0 auto;
+        text-align: center;
         // padding-left: 50px;
         // padding-right: 50px;
-        @include adaptiveValue("padding-left", 50, 20);
-        @include adaptiveValue("padding-right", 50, 20);
+        @include adaptiveValue("padding-left", 100, 20);
+        @include adaptiveValue("padding-right", 100, 20);
 
         &::before {
             content: "";
             position: absolute;
-            bottom: 0;
+            bottom: -30%;
             right: 0;
             height: 2px;
             width: 100%;
@@ -531,6 +490,7 @@
         display: flex;
         justify-content: center;
         gap: 0 50px;
+        padding-bottom: 90px;
     }
 
     &__right,
@@ -542,7 +502,7 @@
         width: 370px;
         height: 440px;
         object-fit: cover;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     &__name {
@@ -550,14 +510,14 @@
         line-height: 39px;
         font-size: 28px;
         color: rgb(33, 36, 61);
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         text-align: center;
         position: relative;
 
         &::before {
             content: "";
             position: absolute;
-            bottom: -10%;
+            bottom: -35%;
             left: 50%;
             transform: translateX(-50%);
             height: 2px;
@@ -569,53 +529,540 @@
 
     &__svg {
         border-radius: 50%;
-        // background-color: rgb(59, 89, 153);
-        // fill: rgb(59, 89, 153);
         margin: 0 auto 30px auto;
         display: flex;
     }
 
-    &__text {}
+    &__text {
+        color: rgb(93, 94, 106);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+        max-width: 325px;
+    }
 
-    &__right {}
+    &__subtext {
+        color: rgb(33, 36, 61);
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 29px;
+        padding: 40px 0px;
+        border-bottom: 1px solid rgba(33, 36, 61, 0.2);
+        border-top: 1px solid rgba(33, 36, 61, 0.2);
+        // записать потом как задть бордеры опасити!!!!!
+        position: relative;
+    }
 
-    &__subtext {}
+    &__icons {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $white;
+        width: 70px;
+        height: 50px;
+    }
+
+    &__icon {
+        margin: 0 auto;
+        max-width: 50px;
+        display: flex;
+        // много флекс подумать!!!
+    }
+
+    &__subtext p {
+        max-width: 680px;
+        margin: 0 auto;
+        display: flex;
+        text-align: center;
+
+    }
+
 }
 
 
+// оптимизировать и списки из списков
+.prices {
+    &__box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 85px;
+    }
+
+    &__title {
+        color: rgb(120, 81, 59);
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 60px;
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        // padding-left: 50px;
+        // padding-right: 50px;
+        @include adaptiveValue("padding-left", 100, 20);
+        @include adaptiveValue("padding-right", 100, 20);
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            right: 0;
+            height: 2px;
+            width: 100%;
+            background-color: rgb(33, 36, 61);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__wrap {
+        max-width: 370px;
+    }
+
+    &__wraps {
+        text-align: center;
+    }
+
+    &__subtitle {
+        color: rgb(33, 36, 61);
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+
+    &__period {
+        color: rgb(33, 36, 61);
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__caption {
+        color: rgb(51, 51, 51);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 5px;
+    }
+
+    &__prices {
+        color: #21243d;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 38px;
+        margin-bottom: 60px;
+    }
+
+    &__items {
+        margin-bottom: 30px;
+
+        &--goal {
+            margin-bottom: 100px;
+        }
+    }
+
+    &__item {
+        color: rgb(51, 51, 51);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        color: rgb(51, 51, 51);
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    &__text p {
+        font-size: 17px;
+        line-height: 27px;
+        margin-bottom: 40px;
+    }
+
+    &__text span {
+        text-align: center;
+        font-size: 20px;
+        line-height: 32px;
+        display: block;
+
+    }
+}
+
+// это не список
+// сделать одинаковые отступы у титулов
+.results {
+    background-image: url('../images/results.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: $white;
+    // height: 100vh;
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 85px;
+    }
+
+    &__title {
+        color: rgb(255, 208, 130);
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 50px;
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        // padding-left: 50px;
+        // padding-right: 50px;
+        @include adaptiveValue("padding-left", 100, 20);
+        @include adaptiveValue("padding-right", 100, 20);
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            right: 0;
+            height: 2px;
+            width: 100%;
+            background-color: rgba(255, 255, 255),
+        }
+    }
 
 
+    &__items {
+        margin-bottom: 110px;
+        max-width: 750px;
+    }
 
+    &__item {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+        margin-bottom: 5px;
+    }
+
+    &__link {
+        color: rgb(136, 225, 242);
+        text-decoration: revert;
+    }
+
+    &__text {
+        margin-bottom: 100px;
+    }
+
+    &__text p {
+        color: rgb(255, 208, 130);
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 35px;
+        max-width: 545px;
+        margin-bottom: 15px;
+    }
+
+    &__text span {
+        color: rgb(206, 206, 206);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    &__video {
+        max-width: 770px;
+        height: 445px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+// возможно список из списков
+// много оберток и сделать грид на одной своитвом
+.guarantees {
+    &__box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 80px;
+    }
+
+    &__title {
+        color: rgb(120, 81, 59);
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 60px;
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        // padding-left: 50px;
+        // padding-right: 50px;
+        @include adaptiveValue("padding-left", 100, 20);
+        @include adaptiveValue("padding-right", 100, 20);
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            right: 0;
+            height: 2px;
+            width: 100%;
+            background-color: rgba(33, 36, 61, 0.5);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    &__right,
+    &__left {
+        max-width: 565px;
+        gap: 40px;
+        display: grid;
+        width: 100%;
+    }
+
+    &__item {
+        padding: 40px 20px;
+        background-color: rgb(255, 225, 176);
+        border-radius: 6px;
+
+        &--honesty {
+            background-color: #21243D;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: start;
+        // старт что бы не ломался записать
+        gap: 15px;
+    }
+
+    &__icon {
+        background-color: #21243D;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--honesty {
+            background-color: rgb(255, 225, 176);
+
+        }
+    }
+
+    &__svg {
+        // background-color: red;
+
+    }
+
+    &__wrap {
+        max-width: 390px;
+    }
+
+    &__subtitle {
+        color: rgb(33, 36, 61);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34px;
+        margin-bottom: 10px;
+
+        &--honesty {
+            // background-color: #21243D;
+            color: $white;
+        }
+    }
+
+    &__text {
+        color: rgb(93, 94, 106);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+
+        &--honesty {
+            color: rgb(159, 207, 231);
+        }
+    }
+}
+
+.recommendations__wrappers {
+    overflow: hidden;
+    position: relative;
+    // !!!
+}
+
+// доделать ховер почистить и заполнить html
+// перекопировать стили стрелок
+.recommendations {
+    background-image: url('../images/recommendations-bg.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+        background: rgba(35, 29, 20, 0.71);
+        z-index: -1;
+    }
+
+    &__title {
+        color: rgb(255, 208, 130);
+        text-align: center;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 60px;
+        margin-bottom: 40px;
+    }
+
+    &__box {
+        text-align: center;
+    }
+
+    &__wrapper {
+        max-width: 740px;
+        margin: 0 auto;
+        // position: relative;
+    }
+
+    &__img {
+        object-fit: cover;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        max-width: 120px;
+        margin: 0 auto 20px;
+        display: flex;
+    }
+
+    &__subtitle {
+        color: rgb(255, 208, 130);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34px;
+        margin-bottom: 20px;
+    }
+
+    &__svg {
+        border-radius: 50%;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+}
+
+
+// .swiper-button-next {}
+
+// .swiper-button-prev {}
+
+// .swiper-wrapper {}
+
+// .swiper-slide {
+//     // text-align: center;
+// }
+
+.slider-casey__items {
+    height: 560px;
+}
 
 .slider-casey__wrapper {
     overflow: hidden;
 }
 
-/*
-
-&__link {
-    color: $title;
-    font-family: $;
-    font-size: 15px;
-    line-height: 1;
-    font-weight: 700;
-    outline-color: #000000;
-    outline-offset: 5px;
-    transition: color 0.5s;
-    &:focus {
-        color: $green;
-    }
-
-    &:hover {
-        color: $ac;
-    }
-
-    &--active {
-        color: $ac;
-    }
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 25px;
+    z-index: 1;
+    opacity: 0.5;
 }
 
-*/
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: $white;
+    top: 50%;
+
+    @media (max-width: 1200px) {
+        top: 5%;
+    }
+
+    @media (max-width: 992px) {
+        top: 20px;
+    }
+
+    // &:hover {
+    //     opacity: 1 !important;
+    //     color: white;
+
+    //     // &:before {
+    //     //     opacity: 1;
+    //     //     color:white;
+    //     // }
+    // }
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     width: 100%;
+    //     opacity: 0;
+    //     transition: all 0.6s ease-in-out;
+    //     // background-image: linear-gradient(204deg, #2fbeff, #1b70b6);
+    //     color: white;
+    // }
+
+    // &:hover {
+    //     opacity: 1;
+    //     color: white;
+
+    //     &:before {
+    //         opacity: 1;
+    //         color: white;
+    //     }
+    // }
+}
+
+
 
 /*.video {
     height: 425px;

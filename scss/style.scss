@@ -14,6 +14,7 @@
 
 // посмотреть про калк в курсе вейб
 // виддио винес
+// поменять цвет на кнопке
 
 .header {
     position: fixed;
@@ -40,11 +41,7 @@
     }
 
     &__links {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 25px;
-
-
+        @include line-height(16, 25, px, );
     }
 
     &__links span {
@@ -54,8 +51,7 @@
 
     &__link {
         text-decoration: revert;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 0.66);
+        color: rgba(0, 0, 0, 0.6);
         text-transform: uppercase;
         transition: color 0.5s;
 
@@ -78,10 +74,7 @@
     }
 
     &__tel {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 30px;
-        color: rgb(33, 36, 61);
+        @include line-height(20, 30, px, );
         text-decoration: revert;
         transition: color 0.5s;
 
@@ -105,9 +98,7 @@
 
     &__mail {
         color: rgba(93, 94, 106);
-        line-height: 28px;
-        font-size: 18px;
-        font-weight: 400;
+        @include line-height(18, 28, px, );
         transition: color 0.5s;
 
         &:focus {
@@ -116,7 +107,6 @@
 
         &:hover {
             color: rgb(151, 71, 27);
-
         }
 
         &:active {
@@ -124,19 +114,12 @@
         }
     }
 
-
     &__link {}
 
     &__logo {}
 }
 
-.logo {
-    &__header {
-        width: 315px;
-        height: 80px;
-        object-fit: cover;
-    }
-}
+
 
 .menu {
     &__btn {
@@ -147,7 +130,6 @@
         gap: 30px;
         display: flex;
         justify-content: center;
-        // align-items: center;
     }
 
     &__item {}
@@ -155,8 +137,6 @@
     &__link {
         transition: color 0.5s;
         color: rgb(20, 20, 20);
-        font-size: 18px;
-        font-weight: 400;
 
         &:focus {
             color: $focus;
@@ -164,14 +144,11 @@
 
         &:hover {
             color: rgb(151, 71, 27);
-
         }
 
         &:active {
             color: $active;
         }
-
-
     }
 
     &__link--active {}
@@ -199,12 +176,8 @@
     }
 
     &__title {
-        font-size: 28px;
-        color: rgb(33, 36, 61);
-        font-weight: 700;
-        line-height: 35px;
         margin-bottom: 80px;
-        // @include line-height(28, 35, px,);
+        @include line-height(28, 35, px, );
     }
 
     &__title span {
@@ -223,10 +196,8 @@
 
     &__title {
         color: rgb(120, 81, 59);
-        font-size: 36px;
         @include adaptiveValue("margin-bottom", 30, 20);
-        font-weight: 700;
-        line-height: 51px;
+        font-size: 36px;
         text-align: center;
     }
 
@@ -246,17 +217,13 @@
     }
 
     &__name {
-        font-size: 24px;
         font-weight: 700;
-        line-height: 34px;
-        color: rgb(33, 36, 61);
+        font-size: 24px;
         margin-bottom: 5px;
     }
 
     &__text {
         font-size: 15px;
-        font-weight: 400;
-        line-height: 22px;
         color: #cecece;
     }
 
@@ -301,8 +268,6 @@
     &__title {
         color: rgb(235, 189, 126);
         font-size: 42px;
-        font-weight: 700;
-        line-height: 60px;
         position: relative;
         display: inline-block;
         margin: 0 auto;
@@ -315,7 +280,6 @@
         &::before {
             content: "";
             position: absolute;
-            // top: 0;
             bottom: 0;
             right: 0;
             height: 2px;
@@ -338,17 +302,13 @@
 
     &__subtitle {
         color: rgb(249, 211, 145);
-        font-size: 30px;
-        font-weight: 400;
-        line-height: 39px;
+        @include line-height(30, 39, px, );
         margin-bottom: 30px;
     }
 
     &__text {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 32px;
-        color: rgba(255, 255, 255, 0.7)
+        @include line-height(20, 32, px, );
+        color: rgba(255, 255, 255, 0.7);
     }
 }
 
@@ -369,28 +329,21 @@
 
     &__title {
         color: rgb(151, 71, 27);
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 48px;
         margin-bottom: 40px;
+        font-size: 34px;
     }
 
-    &__text {
-        font-weight: 400;
-    }
+    &__text {}
 
     &__text p {
         margin-bottom: 80px;
-        font-size: 20px;
-        line-height: 32px;
-        color: rgb(33, 36, 61);
+        @include line-height(20, 32, px, );
     }
 
     &__text span {
         margin-bottom: 50px;
         color: rgb(151, 71, 27);
-        font-size: 28px;
-        line-height: 36px;
+        @include line-height(28, 36, px, );
         margin-bottom: 90px;
         display: block;
     }
@@ -419,7 +372,6 @@
         right: 0;
         bottom: 0;
         display: block;
-        // background: rgba(21, 9, 3, 0.91);
         background: rgba(30, 30, 35, 0.85);
         z-index: -1;
 
@@ -432,25 +384,21 @@
 
     &__title {
         color: rgb(255, 208, 130);
-        font-size: 33px;
-        font-weight: 700;
-        line-height: 46px;
+        @include line-height(33, 46, px, );
         margin-bottom: 20px;
     }
 
     &__items {}
 
     &__item {
-        font-size: 20px;
         color: rgb(255, 255, 255);
-        font-weight: 400;
-        line-height: 32.2px;
+        @include line-height(20, 32, px, );
         margin-bottom: 10px;
     }
 
     &__item span {
         color: rgb(76, 160, 89);
-        font-size: 29px
+        font-size: 29px;
     }
 }
 
@@ -464,8 +412,6 @@
     &__title {
         color: rgb(235, 189, 126);
         font-size: 42px;
-        font-weight: 700;
-        line-height: 60px;
         position: relative;
         display: inline-block;
         margin: 0 auto;
@@ -507,9 +453,7 @@
 
     &__name {
         font-weight: 700;
-        line-height: 39px;
-        font-size: 28px;
-        color: rgb(33, 36, 61);
+        @include line-height(28, 39, px, );
         margin-bottom: 60px;
         text-align: center;
         position: relative;
@@ -522,7 +466,6 @@
             transform: translateX(-50%);
             height: 2px;
             width: 222px;
-            background-color: rgb(33, 36, 61);
             display: inline-block;
         }
     }
@@ -535,18 +478,13 @@
 
     &__text {
         color: rgb(93, 94, 106);
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 28px;
+        @include line-height(18, 28, px, );
         text-align: center;
         max-width: 325px;
     }
 
     &__subtext {
-        color: rgb(33, 36, 61);
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 29px;
+        @include line-height(22, 29, px, );
         padding: 40px 0px;
         border-bottom: 1px solid rgba(33, 36, 61, 0.2);
         border-top: 1px solid rgba(33, 36, 61, 0.2);
@@ -576,9 +514,7 @@
         margin: 0 auto;
         display: flex;
         text-align: center;
-
     }
-
 }
 
 
@@ -592,9 +528,7 @@
 
     &__title {
         color: rgb(120, 81, 59);
-        font-weight: 700;
         font-size: 42px;
-        line-height: 60px;
         position: relative;
         display: inline-block;
         margin: 0 auto;
@@ -631,35 +565,27 @@
     }
 
     &__subtitle {
-        color: rgb(33, 36, 61);
-        font-weight: 700;
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 27px;
         margin-bottom: 20px;
     }
 
     &__period {
-        color: rgb(33, 36, 61);
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 27px;
+        @include line-height(22, 27, px, );
         margin-bottom: 30px;
         text-align: center;
     }
 
     &__caption {
         color: rgb(51, 51, 51);
-        font-size: 18px;
+        @include line-height(18, 28, px, );
         font-weight: 700;
-        line-height: 28px;
         margin-bottom: 5px;
     }
 
     &__prices {
         color: #21243d;
-        font-size: 30px;
+        @include line-height(30, 38, px, );
         font-weight: 700;
-        line-height: 38px;
         margin-bottom: 60px;
     }
 
@@ -673,30 +599,24 @@
 
     &__item {
         color: rgb(51, 51, 51);
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 28px;
+        @include line-height(18, 28, px, );
         margin-bottom: 5px;
     }
 
     &__text {
         color: rgb(51, 51, 51);
-        font-weight: 400;
         margin-bottom: 30px;
     }
 
     &__text p {
-        font-size: 17px;
-        line-height: 27px;
+        @include line-height(17, 27, px, );
         margin-bottom: 40px;
     }
 
     &__text span {
         text-align: center;
-        font-size: 20px;
-        line-height: 32px;
+        @include line-height(20, 32, px, );
         display: block;
-
     }
 }
 
@@ -719,9 +639,7 @@
 
     &__title {
         color: rgb(255, 208, 130);
-        font-weight: 700;
         font-size: 40px;
-        line-height: 50px;
         position: relative;
         display: inline-block;
         margin: 0 auto;
@@ -750,9 +668,7 @@
 
     &__item {
         color: rgb(255, 255, 255);
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 32px;
+        @include line-height(20, 32, px, );
         margin-bottom: 5px;
     }
 
@@ -767,18 +683,15 @@
 
     &__text p {
         color: rgb(255, 208, 130);
-        font-size: 25px;
         font-weight: 700;
-        line-height: 35px;
+        font-size: 24px;
         max-width: 545px;
         margin-bottom: 15px;
     }
 
     &__text span {
         color: rgb(206, 206, 206);
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 32px;
+        @include line-height(20, 32, px, );
     }
 
     &__video {
@@ -800,9 +713,7 @@
 
     &__title {
         color: rgb(120, 81, 59);
-        font-weight: 700;
         font-size: 42px;
-        line-height: 60px;
         position: relative;
         display: inline-block;
         margin: 0 auto;
@@ -880,11 +791,9 @@
     }
 
     &__subtitle {
+        margin-bottom: 10px;
         color: rgb(33, 36, 61);
         font-size: 24px;
-        font-weight: 700;
-        line-height: 34px;
-        margin-bottom: 10px;
 
         &--honesty {
             // background-color: #21243D;
@@ -894,9 +803,7 @@
 
     &__text {
         color: rgb(93, 94, 106);
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 28px;
+        @include line-height(18, 28, px, );
 
         &--honesty {
             color: rgb(159, 207, 231);
@@ -937,8 +844,7 @@
         text-align: center;
         font-size: 42px;
         font-weight: 600;
-        line-height: 60px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     &__box {
@@ -964,34 +870,19 @@
     &__subtitle {
         color: rgb(255, 208, 130);
         font-size: 24px;
-        font-weight: 700;
-        line-height: 34px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     &__svg {
         border-radius: 50%;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     &__text {
         color: rgb(255, 255, 255);
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 28px;
+        // @include line-height(18, 28, px,);
     }
 }
-
-
-// .swiper-button-next {}
-
-// .swiper-button-prev {}
-
-// .swiper-wrapper {}
-
-// .swiper-slide {
-//     // text-align: center;
-// }
 
 .slider-casey__items {
     height: 560px;
@@ -1005,7 +896,6 @@
 .swiper-button-prev:after {
     font-size: 25px;
     z-index: 1;
-    opacity: 0.5;
 }
 
 .swiper-button-next {
@@ -1020,90 +910,253 @@
 .swiper-button-prev {
     color: $white;
     top: 50%;
+    opacity: 0.8;
+    transition: opacity 0.5s;
 
-    @media (max-width: 1200px) {
-        top: 5%;
-    }
-
-    @media (max-width: 992px) {
-        top: 20px;
-    }
-
-    // &:hover {
-    //     opacity: 1 !important;
-    //     color: white;
-
-    //     // &:before {
-    //     //     opacity: 1;
-    //     //     color:white;
-    //     // }
-    // }
-    // &:before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     opacity: 0;
-    //     transition: all 0.6s ease-in-out;
-    //     // background-image: linear-gradient(204deg, #2fbeff, #1b70b6);
-    //     color: white;
+    // @media (max-width: 1200px) {
+    //     top: 5%;
     // }
 
-    // &:hover {
-    //     opacity: 1;
-    //     color: white;
-
-    //     &:before {
-    //         opacity: 1;
-    //         color: white;
-    //     }
+    // @media (max-width: 992px) {
+    //     top: 20px;
     // }
-}
-
-
-
-/*.video {
-    height: 425px;
-    max-width: 1185px;
-    display: flex;
-    justify-content: center;
-    background-position: center;
-    position: relative;
-    opacity: 1;
-    transition: opacity 0.7s,
-        border 0.5s;
-    max-width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-
 
     &:focus {
-        outline: solid $ac;
+        color: $focus;
     }
 
     &:hover {
-        opacity: 0.4;
-        border: 2px solid $black;
+        opacity: 1;
+
     }
 
     &:active {
         color: $active;
     }
+}
 
-    &::after {
+.faq {
+    background: rgba(255, 246, 230, 0.53);
+    background-image: url('../images/faq-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    &::before {
         content: "";
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-image: url('../images/play.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100px;
-        width: 100px;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(255, 246, 230, 0.53);
+        z-index: -1;
     }
-}*/
+
+
+    &__title {
+        color: rgb(120, 81, 59);
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    &__accordion {
+        user-select: none;
+        position: relative;
+        padding-right: 10px;
+        margin-bottom: 50px;
+
+        // @media (max-width: 768px) {
+        //     margin-bottom: 25px;
+        //     max-width: 100%;
+        // }
+
+        // @media (max-width: 576px) {
+        //     margin-bottom: 20px;
+        //     padding-right: 0px;
+        // }
+    }
+
+    &__item {
+        padding: 20px 0px;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(33, 36, 61, 0.2);
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__subtitle {
+        color: rgb(33, 36, 61);
+        font-size: 24px;
+        padding-right: 15px;
+    }
+
+    &__box {
+        user-select: none;
+        position: relative;
+        padding-right: 10px;
+        width: 14px;
+        height: 14px;
+
+        &::before,
+        &::after {
+            height: 14px;
+            width: 2px;
+            content: '';
+            position: absolute;
+            margin: auto;
+            background-color: $hover;
+            transition: all 2s;
+
+            @media (max-width: 576px) {
+                height: 18px;
+            }
+        }
+
+        &::before {
+            transform: rotate(270deg);
+        }
+
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    .active .faq__box:after {
+        transform: rotate(90deg);
+    }
+
+    &__text {
+        color: rgb(93, 94, 106);
+        @include line-height(18, 28, px, );
+    }
+
+    &__btn {
+        padding: 18px 30px;
+        margin: 0 auto;
+        max-width: 200px;
+        display: flex;
+    }
+}
+
+// jpeg отдельно
+.footer {
+    background-image: url('../images/footer-bg.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+        background: rgba(255, 255, 255, 0.75);
+        z-index: -1;
+    }
+
+    &__city {
+        color: rgb(20, 20, 20);
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    &__box {}
+
+    &__link {
+        font-size: 22px;
+        text-decoration: revert;
+        margin-bottom: 20px;
+        display: block;
+        transition: background-color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            color: rgb(151, 71, 27);
+        }
+
+        &:active {
+            color: $active;
+        }
+    }
+
+    &__text {
+        color: rgb(120, 81, 59);
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    &__copy {
+        color: rgb(120, 81, 59);
+        text-align: center;
+    }
+}
+
+.social {
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    &__youtube,
+    &__link {
+        transition: color 0.5s,
+        opacity 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            color: $active;
+        }
+    }
+
+    &__youtube,
+    &__svg {
+        border-radius: 50%;
+    }
+
+    &__youtube {
+        background-color: red;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
 
 @import 'media';

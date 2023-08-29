@@ -5,6 +5,9 @@ $(function name(params) {
         loop: true,
         loopedslides: 1,
         slidesPerView: 1,
+        autoplay: {
+            delay: 5000,
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -27,20 +30,20 @@ $(function name(params) {
 //     });
 // });
 
-// $(document).ready(function () {
-//     $('.faq__accordion > li  >.faq__text').hide();
+$(document).ready(function () {
+    $('.faq__accordion > li  >.faq__text').hide();
 
-//     $('.faq__accordion > li ').click(function () {
-//         if ($(this).hasClass("active")) {
-//             $(this).removeClass("active").find(".faq__text").slideUp();
-//         } else {
-//             $(".faq__accordion > li  .active .faq__text").slideUp();
-//             $(".faq__accordion > li  .active").removeClass("active");
-//             $(this).addClass("active").find(".faq__text").slideDown();
-//         }
-//         return false;
-//     });
-// });
+    $('.faq__accordion > li ').click(function () {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active").find(".faq__text").slideUp();
+        } else {
+            $(".faq__accordion > li  .active .faq__text").slideUp();
+            $(".faq__accordion > li  .active").removeClass("active");
+            $(this).addClass("active").find(".faq__text").slideDown();
+        }
+        return false;
+    });
+});
 
 // --------------------
 /*	$(".menu a").on("click", function (event) {

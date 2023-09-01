@@ -85,7 +85,7 @@
                         технічному
                         завданню<span>з европейскою гарантією</span>
                     </h1>
-                    <button class="intro__btn btn" type="button">
+                    <button class="intro__btn btn modal-window" type="button">
                         замовити
                     </button>
                 </div>
@@ -1394,18 +1394,127 @@
                     </svg>
                 </a>
                 <a class="social__youtube" href="#">
-                        <svg class="social__svg" width="20px" height="20px">
-                            <use xlink:href="images/sprite.svg#youtube">
-                            </use>
-                        </svg>
+                    <svg class="social__svg" width="20px" height="20px">
+                        <use xlink:href="images/sprite.svg#youtube">
+                        </use>
+                    </svg>
                 </a>
             </div>
         </div>
         <p class="footer__copy">
             Всі права захищені. © Family Tree, 2021 - 2023р.
         </p>
-        </div>
     </footer>
+
+    <div class="modal">
+        <div class="modal__inner">
+            <button class="modal__button modal-window" type="button">
+                <span class="sr-only">Закрити модальне вікно</span>
+            </button>
+
+            <div class="modal__box">
+                <h2 class="modal__title">
+                    Заказать
+                </h2>
+                <form class="modal__form form">
+                    <label class="form__label" for="modal-text">
+                        ПІБ*
+                    </label>
+                    <input class="form__input" id="modal-text" type="text" name="name" required
+                        oninvalid="this.setCustomValidity('введіть ваш піб')">
+                    <label class="form__label" for="modal-email">
+                        Email*
+                    </label>
+                    <input class="form__input" id="modal-email" type="email" name="email" required
+                        oninvalid="this.setCustomValidity('Введіть вашу пошту')">
+
+                    <label class="form__label" for="modal-tel">
+                        Номер телефону*
+                    </label>
+                    <input class="form__input" id="modal-tel" type="tel" name="tel" required
+                        oninvalid="this.setCustomValidity('Введіть ваш телефон')">
+                    <div class="form__text">
+                        Що вас цiкавить?*
+                    </div>
+                    <label for="form__label form__label--radio" for="interested">
+                        <!-- <input type="radio" name="gender" value="male"> Дослідження родоводу -->
+                        <input class="form__radio" name="interested" type="radio" id="pedigree" required name="tel"
+                            oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                        Дослідження родоводу
+                    </label>
+                    <label for="form__label form__label--radio" for="interested">
+                        <input class="form__radio" name="interested" type="radio" id="nationality" required
+                            oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                        Підтвердження національності
+                    </label>
+                    <!-- <div class="">
+                        <label class="form__label form__label--radio" for="pedigree">
+                            <input class="form__radio" type="radio" id="pedigree" required name="tel"
+                                oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                            Дослідження родоводу
+                            <input class="form__radio" type="radio" id="nationality" required
+                                oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                            Підтвердження національності
+                        </label>
+                        <label class="form__label form__label--radio" for="nationality" name="tel">
+                            <input class="form__radio" type="radio" id="nationality" required
+                                oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                            Підтвердження національності
+                        </label>
+                    </div> -->
+                    <!-- <div><label>
+                            <div class="jq-radios"><input type="radio" name="radio">
+                                <div class="jq-radio__div"></div>
+                            </div> радиокнопка 1
+                        </label><br><label>
+                            <div class="jq-radios"><input type="radio" name="radio">
+                                <div class="jq-radio__div"></div>
+                            </div> радиокнопка 2
+                        </label><br><label>
+                            <div class="jq-radios"><input type="radio" name="radio">
+                                <div class="jq-radio__divs"></div>
+                            </div> радиокнопка 3
+                        </label><br><label>
+                            <div class="jq-radios"><input type="radio" name="radio">
+                                <div class="jq-radio__divs"></div>
+                            </div> радиокнопка 4
+                        </label><br><label>
+                            <div class="jq-radioss"><input type="radio" name="radio">
+                                <div class="jq-radio__divs"></div>
+                            </div> радиокнопка 5
+                        </label><br></div> -->
+                    <label class="form__label" for="form--text">
+                        Коментар
+                    </label>
+                    <input class="form__input" id="form--text" type="text" name="text">
+                    <div class="form__text">
+                        Виберіть зручний для вас месенджер*
+                    </div>
+                    <label class="form__label form__label--checkbox" for="form-whatsapp">
+                        <input class="form__checkbox" type="checkbox" id="form-whatsapp">
+                        Whatsapp
+                    </label>
+                    <label class="form__label form__label--checkbox" for="form-viber">
+                        <input class="form__checkbox" type="checkbox" id="form-viber">
+                        Viber
+                    </label>
+                    <label class="form__label form__label--checkbox" for="form-telegram">
+                        <input class="form__checkbox" type="checkbox" id="form-telegram">
+                        Telegram
+                    </label>
+                    <label class="form__label" for="form-nick">
+                        Який в вас нік в телеграм?
+                    </label>
+                    <input class="form__input" id="form-nick" type="text" name="nick">
+
+                    <button class="form__btn" type="submit">
+                        <span>Відправити</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <script src="js/main.min.js?_v=20230604180731"></script>
 </body>

@@ -1,4 +1,12 @@
 
+(function ($) {
+    $(function () {
+        $('input, select, form__radio').styler({
+            selectSearch: true,
+        });
+    });
+})(jQuery);
+
 
 $(function name(params) {
     const Recommendations = new Swiper('.Recommendations', {
@@ -44,6 +52,48 @@ $(document).ready(function () {
         return false;
     });
 });
+
+const modalWindow = document.querySelector('.modal');
+let elements = document.querySelectorAll('.modal-window');
+
+for (let i = 0; i < elements.length; i++) {/*прокручиваем в цикле все элементы*/
+    elements[i].addEventListener('click', function () {  /*при клике на элемент */
+
+
+        if (modalWindow.classList.contains('modal-open')) {
+            modalWindow.classList.remove('modal-open');
+        } else {
+            modalWindow.classList.add('modal-open');
+        }
+
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 27) {
+                modalWindow.classList.remove('modal-open');
+            }
+        }
+    })
+}
+
+// close modal
+$('.modal').click(function () {
+    var select = $('.modal__inner');
+    if ($(event.target).closest(select).length)
+        return;
+    $('.modal').toggleClass('modal-open');
+    $(document).unbind('click');
+    event.stopPropagation();
+});
+
+// (function ($) {
+//     $(function () {
+
+//         $('checkbox').styler();
+
+//     });
+// })(jQuery);
+
+
 
 // --------------------
 /*	$(".menu a").on("click", function (event) {

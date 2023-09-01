@@ -16,6 +16,8 @@
 // виддио винес
 // поменять цвет на кнопке
 
+// протестить что вас интересует потом 
+
 .header {
     position: fixed;
     top: 0;
@@ -1126,7 +1128,7 @@
     &__youtube,
     &__link {
         transition: color 0.5s,
-        opacity 0.5s;
+            opacity 0.5s;
 
         &:focus {
             color: $focus;
@@ -1158,5 +1160,183 @@
 
 
 
+.modal {
+    position: fixed;
+    // top: 17%;
+    top: 0%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    backdrop-filter: blur(4rem);
+    transition: opacity 0.5s,
+        overflow 0.5s;
+    opacity: 0;
+    // z-index: 100;
+    z-index: -100;
+
+    &__inner {
+        background-image: url('../images/modal-bg.webp');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        max-width: 770px;
+        padding: 30px 100px 80px 100px;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+        }
+    }
+
+    &__box {
+        // max-width: 485px;
+    }
+
+    &__button {
+        display: none;
+    }
+
+    &-window {}
+
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 43px;
+        text-align: center;
+        margin-bottom: 80px;
+        color: rgb(20, 20, 20);
+    }
+
+    &__form {}
+}
+
+.modal-open {
+    opacity: 1;
+    z-index: 999;
+    // z-index: 300;
+    // overflow: hidden;
+}
+
+.form {
+    max-width: 485px;
+
+    &__label {
+        color: rgb(93, 94, 106);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 20px;
+        display: block;
+
+        &--checkbox {
+            margin-bottom: 10px;
+        }
+
+        &--radio {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__input {
+        margin-bottom: 20px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.29);
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        display: block;
+        // border: none;
+        background-color: rgba(33, 36, 61, 0.07);
+        width: 480px;
+        // padding: 20px;
+        padding: 13px 20px 13px 20px;
+        // сделать снипеты бордеров с вариацими
+    }
+
+    &__text {
+        color: rgb(93, 94, 106);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+
+    &__label--checkbox {}
+
+    &__checkbox {}
+
+    &__btn {
+        color: rgb(255, 255, 255);
+        width: 100%;
+        font-weight: 700;
+        font-size: 16px;
+        background-color: rgb(43, 133, 57);
+        border: none;
+        padding: 15px 26px;
+    }
+}
+
+.jq-radio.checked .jq-radio__div {
+    margin: 2px 0 0 2px;
+}
+
+.jq-radio .form__radio {
+    // color: rgb(93, 94, 106)
+    color: rgba(93, 94, 106, 0.54);
+
+}
+
+.jq-radio {
+    border: 2px solid rgba(93, 94, 106, 0.54);
+    // не актив
+}
+
+// .jq-radio .form__radio .checked {
+//      border: 2px solid red;
+// }
+
+.jq-checkbox,
+.jq-radio {
+    // border: 2px solid rgba(93, 94, 106);
+    // актив
+}
+
+.jq-radio .form__radio .checked {
+    border: 2px solid red !important;
+}
+
+// .jq-radio__div {
+//     color: red;
+//     background-color: red;
+// }
+
+.jq-radio.checked .jq-radio__div {
+    background: rgb(93, 94, 106);
+    width: 8px;
+    height: 8px;
+}
+
+
+.jq-radio .form__radio {
+    color: rgb(93, 94, 106);
+}
+
+.form__label {
+    display: block;
+}
 
 @import 'media';

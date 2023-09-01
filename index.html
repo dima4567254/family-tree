@@ -40,39 +40,6 @@
                     </a>
                 </div>
             </div>
-            <nav class="menu">
-                <button class="menu__btn" type="button">
-                    <span></span>
-                    <span class="sr-only">відкрити меню</span>
-                </button>
-                <ul class="menu__items">
-                    <li class="menu__item">
-                        <a class="menu__link menu__link--active" href="#">
-                            Про нас
-                        </a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#service">
-                            Результат
-                        </a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#collections">
-                            Ціни та види послуг
-                        </a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#products">
-                            Гарантії
-                        </a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#about">
-                            Контакти
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </header>
 
@@ -80,6 +47,39 @@
         <section class="intro">
             <div class="container">
                 <div class="intro__box">
+                    <nav class="intro__menu menu">
+                        <button class="menu__btn" type="button">
+                            <span></span>
+                            <span class="sr-only">відкрити меню</span>
+                        </button>
+                        <ul class="menu__items">
+                            <li class="menu__item">
+                                <a class="menu__link menu__link--active" href="#">
+                                    Про нас
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#service">
+                                    Результат
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#collections">
+                                    Ціни та види послуг
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#products">
+                                    Гарантії
+                                </a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#about">
+                                    Контакти
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                     <h1 class="intro__title title">
                         Індивідуальний проєкт дослідження <span>сімейної історії</span> по спільно розробленому
                         технічному
@@ -1408,9 +1408,14 @@
 
     <div class="modal">
         <div class="modal__inner">
-            <button class="modal__button modal-window" type="button">
-                <span class="sr-only">Закрити модальне вікно</span>
-            </button>
+            <div class="modal__btn">
+                <button class="modal__button modal-window" type="button">
+                    <span></span>
+                    <span class="sr-only">
+                        Закрити модальне вікно
+                    </span>
+                </button>
+            </div>
 
             <div class="modal__box">
                 <h2 class="modal__title">
@@ -1436,61 +1441,22 @@
                     <div class="form__text">
                         Що вас цiкавить?*
                     </div>
-                    
-                    <div class="form__text">
-                        Що вас цiкавить?*
+                    <div class="form__inner">
+                        <div class="form__box">
+                            <label class="form__label  form__label--radio" for="interested">
+                                <input class="form__radio" name="interested" type="radio" id="pedigree" required
+                                    name="tel" oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                                Дослідження родоводу
+                            </label>
+                        </div>
+                        <div class="form__box">
+                            <label class="form__label form__label--radio" for="interested">
+                                <input class="form__radio" name="interested" type="radio" id="nationality" required
+                                    oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
+                                Підтвердження національності
+                            </label>
+                        </div>
                     </div>
-                    
-                    
-                    
-                    <label for="form__label form__label--radio" for="interested">
-                        <!-- <input type="radio" name="gender" value="male"> Дослідження родоводу -->
-                        <input class="form__radio" name="interested" type="radio" id="pedigree" required name="tel"
-                            oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
-                        Дослідження родоводу
-                    </label>
-                    <label for="form__label form__label--radio" for="interested">
-                        <input class="form__radio" name="interested" type="radio" id="nationality" required
-                            oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
-                        Підтвердження національності
-                    </label>
-                    ,.
-                    <!-- <div class="">
-                        <label class="form__label form__label--radio" for="pedigree">
-                            <input class="form__radio" type="radio" id="pedigree" required name="tel"
-                                oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
-                            Дослідження родоводу
-                            <input class="form__radio" type="radio" id="nationality" required
-                                oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
-                            Підтвердження національності
-                        </label>
-                        <label class="form__label form__label--radio" for="nationality" name="tel">
-                            <input class="form__radio" type="radio" id="nationality" required
-                                oninvalid="this.setCustomValidity('виберіть що вас цікавить')">
-                            Підтвердження національності
-                        </label>
-                    </div> -->
-                    <!-- <div><label>
-                            <div class="jq-radios"><input type="radio" name="radio">
-                                <div class="jq-radio__div"></div>
-                            </div> радиокнопка 1
-                        </label><br><label>
-                            <div class="jq-radios"><input type="radio" name="radio">
-                                <div class="jq-radio__div"></div>
-                            </div> радиокнопка 2
-                        </label><br><label>
-                            <div class="jq-radios"><input type="radio" name="radio">
-                                <div class="jq-radio__divs"></div>
-                            </div> радиокнопка 3
-                        </label><br><label>
-                            <div class="jq-radios"><input type="radio" name="radio">
-                                <div class="jq-radio__divs"></div>
-                            </div> радиокнопка 4
-                        </label><br><label>
-                            <div class="jq-radioss"><input type="radio" name="radio">
-                                <div class="jq-radio__divs"></div>
-                            </div> радиокнопка 5
-                        </label><br></div> -->
                     <label class="form__label" for="form--text">
                         Коментар
                     </label>
@@ -1498,18 +1464,26 @@
                     <div class="form__text">
                         Виберіть зручний для вас месенджер*
                     </div>
-                    <label class="form__label form__label--checkbox" for="form-whatsapp">
-                        <input class="form__checkbox" type="checkbox" id="form-whatsapp">
-                        Whatsapp
-                    </label>
-                    <label class="form__label form__label--checkbox" for="form-viber">
-                        <input class="form__checkbox" type="checkbox" id="form-viber">
-                        Viber
-                    </label>
-                    <label class="form__label form__label--checkbox" for="form-telegram">
-                        <input class="form__checkbox" type="checkbox" id="form-telegram">
-                        Telegram
-                    </label>
+                    <div class="form__inner">
+                        <div class="form__box">
+                            <label class="form__label form__label--checkbox" for="form-whatsapp">
+                                <input class="form__checkbox" type="checkbox" id="form-whatsapp">
+                                Whatsapp
+                            </label>
+                        </div>
+                        <div class="form__box">
+                            <label class="form__label form__label--checkbox" for="form-viber">
+                                <input class="form__checkbox" type="checkbox" id="form-viber">
+                                Viber
+                            </label>
+                        </div>
+                        <div class="form__box">
+                            <label class="form__label form__label--checkbox" for="form-telegram">
+                                <input class="form__checkbox" type="checkbox" id="form-telegram">
+                                Telegram
+                            </label>
+                        </div>
+                    </div>
                     <label class="form__label" for="form-nick">
                         Який в вас нік в телеграм?
                     </label>

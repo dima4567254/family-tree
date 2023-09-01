@@ -7,6 +7,17 @@
     });
 })(jQuery);
 
+$(function () {
+    let header = $('.header');
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            header.addClass('header-fixed');
+        } else {
+            header.removeClass('header-fixed');
+        }
+    });
+});
 
 $(function name(params) {
     const Recommendations = new Swiper('.Recommendations', {
@@ -96,16 +107,16 @@ $('.modal').click(function () {
 
 
 // --------------------
-/*	$(".menu a").on("click", function (event) {
-        event.preventDefault();
-        var id = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({
-            scrollTop: top
-        }, 1500);
-    });
+$(".menu a").on("click", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({
+        scrollTop: top
+    }, 1500);
+});
 
-    /*для закрыть меню*/
+/*для закрыть меню*/
 /*
           $('.menu__btn').on('click', function () {
               $('.menu__items').toggleClass('menu__items--active');

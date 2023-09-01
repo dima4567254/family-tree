@@ -17,14 +17,13 @@
 // поменять цвет на кнопке
 
 // протестить что вас интересует потом 
-
+// придумать что то с активом и фокусом
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: white;
 
     &__top {
         display: flex;
@@ -121,7 +120,9 @@
     &__logo {}
 }
 
-
+.header-fixed {
+    background-color: white;
+}
 
 .menu {
     &__btn {
@@ -166,11 +167,16 @@
     height: 73vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
-    padding-top: 80px;
+    // padding-top: 80px;
+    padding-top: 120px;
 
     // height: 100vh;
+
+    &__menu {
+        margin-bottom: 110px;
+    }
 
     &__box {
         max-width: 650px;
@@ -178,7 +184,7 @@
     }
 
     &__title {
-        margin-bottom: 80px;
+        margin-bottom: 105px;
         @include line-height(28, 35, px, );
     }
 
@@ -1158,12 +1164,12 @@
     }
 }
 
-
+// много оберток и отступов и нижний сделать сприском
 
 .modal {
     position: fixed;
     // top: 17%;
-    top: 0%;
+    top: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -1181,6 +1187,8 @@
     z-index: -100;
 
     &__inner {
+        margin-top: 10%;
+        margin-bottom: 10%;
         background-image: url('../images/modal-bg.webp');
         background-position: center;
         background-size: cover;
@@ -1206,8 +1214,49 @@
         // max-width: 485px;
     }
 
+    &__btn {
+        position: absolute;
+        top: 1%;
+        right: 5%;
+    }
+
     &__button {
-        display: none;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        height: 25px;
+        position: relative;
+
+        padding: 0;
+        z-index: 10;
+
+        span {
+            height: 2px;
+            width: 100%;
+            background-color: #000000;
+            transform: scale(0);
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: #000000;
+        }
+
+        &::before {
+            content: '';
+            transform: rotate(45deg);
+            // top: 9px;
+            top: 65%;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            bottom: 6px;
+        }
     }
 
     &-window {}
@@ -1217,7 +1266,7 @@
         font-weight: 700;
         line-height: 43px;
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 65px;
         color: rgb(20, 20, 20);
     }
 
@@ -1234,21 +1283,48 @@
 .form {
     max-width: 485px;
 
+    &__inner {
+        margin-bottom: 20px;
+    }
+
+    &__box {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
     &__label {
         color: rgb(93, 94, 106);
         font-size: 18px;
         font-weight: 400;
         line-height: 28px;
-        margin-bottom: 20px;
         display: block;
 
-        &--checkbox {
-            margin-bottom: 10px;
+        &:not(:last-child) {
+            margin-bottom: 15px;
         }
 
-        &--radio {
-            display: block;
-            margin-bottom: 20px;
+        &--radio,
+        &--checkbox {
+            display: inline-block;
+
+            &:focus {
+                color: $focus;
+            }
+
+            &:hover {
+
+                .form__radio,
+                .form__checkbox {
+                    border: 2px solid rgb(93, 94, 106);
+                }
+            }
+
+            &:active {
+                color: $active;
+            }
         }
     }
 
@@ -1267,17 +1343,18 @@
         // сделать снипеты бордеров с вариацими
     }
 
+    &__radio,
+    &__checkbox {
+        border: 2px solid rgba(93, 94, 106, 0.54);
+    }
+
     &__text {
         color: rgb(93, 94, 106);
         font-size: 18px;
         font-weight: 400;
         line-height: 28px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
-
-    &__label--checkbox {}
-
-    &__checkbox {}
 
     &__btn {
         color: rgb(255, 255, 255);
@@ -1287,42 +1364,54 @@
         background-color: rgb(43, 133, 57);
         border: none;
         padding: 15px 26px;
+        transition: background-color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            background-color: #21243d;
+        }
+
+        &:active {
+            color: $active;
+        }
     }
 }
 
+// Стили радио кнопок 
+// ----------------------------------
 .jq-radio.checked .jq-radio__div {
     margin: 2px 0 0 2px;
 }
 
 .jq-radio .form__radio {
-    // color: rgb(93, 94, 106)
-    color: rgba(93, 94, 106, 0.54);
-
+    color: rgb(93, 94, 106);
 }
 
 .jq-radio {
     border: 2px solid rgba(93, 94, 106, 0.54);
+    transition: color 0.5s;
+
+    &:focus {
+        color: $focus;
+    }
+
+    &:hover {
+        border: 2px solid rgb(93, 94, 106);
+    }
+
+    &:active {
+        color: $active;
+    }
+
     // не актив
 }
 
-// .jq-radio .form__radio .checked {
-//      border: 2px solid red;
-// }
-
-.jq-checkbox,
-.jq-radio {
-    // border: 2px solid rgba(93, 94, 106);
-    // актив
+.jq-radio.checked {
+    border: 2px solid rgb(93, 94, 106);
 }
-
-.jq-radio .form__radio .checked {
-    border: 2px solid red !important;
-}
-
-// .jq-radio__div {
-//     color: red;
-//     background-color: red;
-// }
 
 .jq-radio.checked .jq-radio__div {
     background: rgb(93, 94, 106);
@@ -1330,13 +1419,8 @@
     height: 8px;
 }
 
-
 .jq-radio .form__radio {
     color: rgb(93, 94, 106);
 }
 
-.form__label {
-    display: block;
-}
-
-@import 'media';
+// ----------------------------------

@@ -1,4 +1,11 @@
 
+$('.header__btn').on('click', function () {
+    $('.header__inner').toggleClass('header__inner--active');
+
+        /*$('.header__logo').toggleClass('menu__list--active');
+        $('.intro__btn').toggleClass('menu__list--active');*/
+    });
+
 (function ($) {
     $(function () {
         $('input, select, form__radio').styler({

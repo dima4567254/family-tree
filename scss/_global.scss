@@ -156,6 +156,22 @@ body {
         width: 315px;
         height: 80px;
         object-fit: cover;
+        // z-index: 100;
+    }
+
+    //проверить может объединить
+    &__mobile {
+        // width: 890px;
+        // height: 230px;
+        @include adaptiveValue("width", 890, 220);
+        @include adaptiveValue("height", 230, 55);
+        
+        object-fit: cover;
+
+        // @media (max-width: 992px) {
+        //     max-width: 890px;
+        //     height: auto;
+        // }
     }
 
     &__footer {

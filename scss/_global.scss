@@ -104,7 +104,11 @@ html {
     }
 
     @media (max-width: 768px) {
-        font-size: 35%;
+        font-size: 40%;
+    }
+
+    @media (max-width: 576px) {
+        // font-size: 30%;
     }
 }
 
@@ -165,7 +169,10 @@ body {
         // height: 230px;
         @include adaptiveValue("width", 890, 220);
         @include adaptiveValue("height", 230, 55);
+        // @include adaptiveValue("width", 890, 800);
+        // @include adaptiveValue("height", 230, 200);
         
+
         object-fit: cover;
 
         // @media (max-width: 992px) {
@@ -175,9 +182,11 @@ body {
     }
 
     &__footer {
-        width: 570px;
-        height: 150px;
-        object-fit: cover;
+        // width: 570px;
+        // height: 150px;
+        @include adaptiveValue("width", 890, 220);
+        @include adaptiveValue("height", 230, 55);
+        object-fit: contain;
     }
 }
 

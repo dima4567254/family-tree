@@ -5,6 +5,12 @@ $('.header__btn').on('click', function () {
         /*$('.header__logo').toggleClass('menu__list--active');
         $('.intro__btn').toggleClass('menu__list--active');*/
     });
+$('.header__btn').on('click', function () {
+    $('.header__btn').toggleClass('active');
+
+        /*$('.header__logo').toggleClass('menu__list--active');
+        $('.intro__btn').toggleClass('menu__list--active');*/
+    });
 
 (function ($) {
     $(function () {

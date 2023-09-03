@@ -1,4 +1,0 @@
-<span style="color:rgb(76,160,89);font-size:28px">✔ </span>
-color: rgb(76,160,89);
-    font-size: 29px;
-}

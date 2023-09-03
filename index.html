@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="https://yoursite.ru/favicon.png" type="image/x-icon">
     <title>family-tree</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css?_v=20230903211923" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css?_v=20230604180731">
 </head>
 
@@ -40,7 +41,7 @@
                     </a>
                 </div>
             </div>
-            <ul class="header__mobile">
+            <div class="header__mobile">
                 <div class="header__wrapper">
                     <a class="header__logo logo" href="#">
                         <img class="logo__mobile" src="images/logo-big.png" alt="logo">
@@ -73,11 +74,11 @@
                         </div>
                     </div>
                 </div>
-            </ul>
+            </div>
         </div>
     </header>
 
-     <main class="main">
+    <main class="main">
         <section class="intro">
             <div class="container">
                 <div class="intro__box">
@@ -88,27 +89,27 @@
                         </button>
                         <ul class="menu__items">
                             <li class="menu__item">
-                                <a class="menu__link menu__link--active" href="#">
+                                <a class="menu__link menu__link--active" href="#about">
                                     Про нас
                                 </a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="#service">
+                                <a class="menu__link" href="#results">
                                     Результат
                                 </a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="#collections">
+                                <a class="menu__link" href="#prices">
                                     Ціни та види послуг
                                 </a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="#products">
+                                <a class="menu__link" href="#guarantees">
                                     Гарантії
                                 </a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="#about">
+                                <a class="menu__link" href="footer">
                                     Контакти
                                 </a>
                             </li>
@@ -125,7 +126,7 @@
                 </div>
             </div>
         </section>
-    
+
         <section class="reviews section">
             <div class="container">
                 <h2 class="reviews__title title">
@@ -198,13 +199,13 @@
 
         <section class="service section">
             <div class="container">
-                <div class="service__box">
+                <div class="service__box" data-aos="fade-up" data-aos-delay="150">
                     <h2 class="service__title title">
                         Чому ми?
                     </h2>
                 </div>
                 <ul class="service__items">
-                    <li class="service__item">
+                    <li class="service__item" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="service__subtitle">
                             Повертаємо кошти у випадку форс мажору
                         </h3>
@@ -216,7 +217,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="service__item">
+                    <li class="service__item" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="service__subtitle">
                             Узгоджуємо план та бюджет до початку проєкту
                         </h3>
@@ -227,7 +228,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="service__item">
+                    <li class="service__item" data-aos="fade-up" data-aos-delay="250">
                         <h3 class="service__subtitle">
                             Великий обсяг архівних документів
                         </h3>
@@ -238,7 +239,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="service__item">
+                    <li class="service__item" data-aos="fade-up" data-aos-delay="250">
                         <h3 class="service__subtitle">
                             Пропонуємо зручну для клієнта систему комунікації
                         </h3>
@@ -259,21 +260,21 @@
         <section class="history section">
             <div class="container">
                 <div class="history__box">
-                    <h2 class="history__title title">
+                    <h2 class="history__title title" data-aos="fade-up" data-aos-delay="150">
                         Дослідження історії свого роду будь-якої миті може стати неможливим
                     </h2>
-                    <div class="history__text">
+                    <div class="history__text" data-aos="fade-up" data-aos-delay="200">
                         <p>
                             Архіви не вічні, час змінює і знищує все. Навіть відскановані документи, на жаль, зникають з
                             просторів інтернету. Важливо встигнути дослідити свій родовід, щоб зберегти його і передати
                             нащадкам
                         </p>
-                        <span>
+                        <span data-aos="fade-up" data-aos-delay="250">
                             Якщо не скористатися цією можливістю, майбутні покоління вже не зможуть дізнатися про свій
                             родовід
                         </span>
                     </div>
-                    <button class="history__btn btn" type="button">
+                    <button class="history__btn btn" type="button" data-aos="fade-up" data-aos-delay="300">
                         замовити
                     </button>
                 </div>
@@ -282,7 +283,7 @@
 
         <section class="pedigree section">
             <div class="container">
-                <div class="pedigree__box">
+                <div class="pedigree__box" data-aos="fade-up" data-aos-delay="150">
                     <h2 class="pedigree__title title">
                         Дослідження родоводу для вас, якщо ви прагнете:
                     </h2>
@@ -316,26 +317,27 @@
             </div>
         </section>
 
-        <section class="about section">
+        <section class="about section" id="about">
             <div class="container">
-                <div class="about__box">
+                <div class="about__box" data-aos="fade-up" data-aos-delay="150">
                     <h2 class="about__title title">
                         Про нас
                     </h2>
                 </div>
                 <div class="about__inner">
                     <div class="about__left">
-                        <img class="about__img" src="images/vlad.png" alt="Влад Волинський">
-                        <div class="about__name">
+                        <img class="about__img" src="images/vlad.png" alt="Влад Волинський" data-aos="fade-up"
+                            data-aos-delay="200">
+                        <div class="about__name" data-aos="fade-up" data-aos-delay="250">
                             Влад Волинський
                         </div>
-                        <a class="about__link" href="#">
+                        <a class="about__link" href="#" data-aos="fade-up" data-aos-delay="300">
                             <svg class="about__svg" width="30px" height="30px" fill="#3B5999">
                                 <use xlink:href="images/sprite.svg#facebook">
                                 </use>
                             </svg>
                         </a>
-                        <div class="about__text">
+                        <div class="about__text" data-aos="fade-up" data-aos-delay="350">
                             <p>
                                 Співзасновник компанії.
                             </p>
@@ -346,11 +348,12 @@
                         </div>
                     </div>
                     <div class="about__right">
-                        <img class="about__img" src="images/lily.png" alt="Лілія Лобас">
-                        <div class="about__name">
+                        <img class="about__img" src="images/lily.png" alt="Лілія Лобас" data-aos="fade-up"
+                            data-aos-delay="200">
+                        <div class="about__name" data-aos="fade-up" data-aos-delay="250">
                             Лілія Лобас
                         </div>
-                        <a class="about__link" href="#">
+                        <a class="about__link" href="#" data-aos="fade-up" data-aos-delay="300">
                             <svg class="about__svg" width="30px" height="30px" viewBox="0 0 32 32">
                                 <radialgradient cx="30.1942316%" cy="107.742086%" fx="30.1942316%" fy="107.742086%"
                                     r="143.210279%"
@@ -394,7 +397,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <div class="about__text">
+                        <div class="about__text" data-aos="fade-up" data-aos-delay="350">
                             <p>
                                 Співзасновник компанії.
                             </p>
@@ -404,8 +407,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="about__subtext">
+                <div class="about__subtext" data-aos="fade-up" data-aos-delay="400">
                     <div class="about__icons">
                         <svg class="about__icon" width="50px" height="50px">
                             <use xlink:href="images/sprite.svg#quotes">
@@ -420,7 +422,7 @@
             </div>
         </section>
 
-        <section class="prices section">
+        <section class="prices section" id="prices">
             <div class="container">
                 <div class="prices__box">
                     <h2 class="prices__title title">
@@ -676,14 +678,14 @@
             </div>
         </section>
 
-        <section class="results section">
+        <section class="results section" id="results">
             <div class="container">
                 <div class="results__box">
-                    <h2 class="results__title title">
+                    <h2 class="results__title title" data-aos="fade-up" data-aos-delay="150">
                         Результати роботи
                     </h2>
                 </div>
-                <ol class="results__items">
+                <ol class="results__items" data-aos="fade-up" data-aos-delay="200">
                     <li class="results__item">
                         – Дерево роду на ресурсі “My Heritage” (на ваше бажання).
                         <a class="results__link" href="#">
@@ -709,17 +711,17 @@
                         – Детальний звіт про витрату коштів у рамках проєкту.
                     </li>
                 </ol>
-                <div class="results__text">
+                <div class="results__text" data-aos="fade-up" data-aos-delay="250">
                     <p>
                         Щоб наочно побачити результати роботи,
                         перегляньте це відео:
                     </p>
-                    <span>
+                    <span data-aos="fade-up" data-aos-delay="300">
                         Опубліковано за згодою клієнта
                     </span>
                 </div>
                 <a class="results__video video" data-fancybox style="background-image: url('../images/countdown.jpg')"
-                    href="https://www.youtube.com/watch?v=9elw6D3CkEI">
+                    href="https://www.youtube.com/watch?v=9elw6D3CkEI" data-aos="fade-up" data-aos-delay="350">
                     <span class="sr-only">
                         відкрити відео відгук з артемом
                     </span>
@@ -732,16 +734,16 @@
             </div>
         </section>
 
-        <section class="guarantees section">
+        <section class="guarantees section" id="guarantees">
             <div class="container">
                 <div class="guarantees__box">
-                    <h2 class="guarantees__title title">
+                    <h2 class="guarantees__title title" data-aos="fade-up" data-aos-delay="150">
                         Які гарантії ми даємо
                     </h2>
                 </div>
                 <div class="guarantees__wrapper">
                     <ul class="guarantees__left">
-                        <li class="guarantees__item">
+                        <li class="guarantees__item" data-aos="fade-up" data-aos-delay="200">
                             <div class="guarantees__inner">
                                 <div class="guarantees__icon">
                                     <svg class="guarantees__svg" width="60px" height="60px" fill="#ffffff">
@@ -762,7 +764,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="guarantees__item">
+                        <li class="guarantees__item" data-aos="fade-up" data-aos-delay="250">
                             <div class="guarantees__inner">
                                 <div class="guarantees__icon">
                                     <svg class="guarantees__svg" width="60px" height="60px" fill="#ffffff">
@@ -782,7 +784,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="guarantees__item">
+                        <li class="guarantees__item" data-aos="fade-up" data-aos-delay="300">
                             <div class="guarantees__inner">
                                 <div class="guarantees__icon">
                                     <svg class="guarantees__svg" width="60px" height="60px" fill="#ffffff">
@@ -801,11 +803,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </li>
                     </ul>
                     <ul class="guarantees__right">
-                        <li class="guarantees__item guarantees__item--honesty">
+                        <li class="guarantees__item guarantees__item--honesty" data-aos="fade-up" data-aos-delay="200">
                             <div class="guarantees__inner">
                                 <div class="guarantees__icon guarantees__icon--honesty">
                                     <svg class="guarantees__svg" width="60px" height="60px" fill="#000000">
@@ -825,7 +826,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="guarantees__item guarantees__item--honesty">
+                        <li class="guarantees__item guarantees__item--honesty" data-aos="fade-up" data-aos-delay="250">
                             <div class="guarantees__inner">
                                 <div class="guarantees__icon guarantees__icon--honesty">
                                     <svg class="guarantees__svg" width="60px" height="60px" fill="#000000">
@@ -845,7 +846,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="guarantees__item guarantees__item--honesty">
+                        <li class="guarantees__item guarantees__item--honesty" data-aos="fade-up" data-aos-delay="300">
                             <div class="guarantees__inner">
                                 <div class="guarantees__icon guarantees__icon--honesty">
                                     <svg class="guarantees__svg" width="60px" height="60px" fill="#000000">
@@ -1184,6 +1185,7 @@
                         </li>
                     </ul>
                 </div>
+            </div>
         </section>
 
         <section class="faq section">
@@ -1348,14 +1350,14 @@
                         </div>
                     </li>
                 </ul>
-                <button class="faq__btn btn" type="button">
+                <button class="faq__btn btn" type="button" data-aos="fade-up" data-aos-delay="350">
                     замовити
                 </button>
             </div>
         </section>
     </main>
 
-    <footer class="footer section">
+    <footer class="footer section" id="footer">
         <div class="container">
             <div class="footer__wrapper">
                 <a class="footer__logo logo" href="#">
@@ -1434,9 +1436,9 @@
                     </svg>
                 </a>
             </div>
-             <p class="footer__copy">
-                 Всі права захищені. © Family Tree, 2021 - 2023р.
-             </p>
+            <p class="footer__copy">
+                Всі права захищені. © Family Tree, 2021 - 2023р.
+            </p>
         </div>
     </footer>
 
@@ -1529,9 +1531,9 @@
                 </form>
             </div>
         </div>
-    </div> 
+    </div>
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20230903211923"></script>
     <script src="js/main.min.js?_v=20230604180731"></script>
 </body>
 

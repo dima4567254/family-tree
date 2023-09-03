@@ -1,16 +1,34 @@
 
+AOS.init({
+    // delay: 100, // values from 0 to 3000, with step 50ms
+    duration: 900, //длительность работает900
+    // once: false, // whether animation should happen only once - while scrolling down
+    mirror: true,
+    // once: true,
+    disable: 'phone',
+    disable: 'tablet',
+    disable: 'mobile',
+    // ---
+    // anchorPlacement: 'top',
+    // offset: 200,
+    // throttleDelay: 99, 
+    // easing: "cubic-bezier(.4, .8, .74, 1)", once: !0
+    // 'tablet', 'mobile',
+    // активация библиотеки AOS
+})
+
 $('.header__btn').on('click', function () {
     $('.header__inner').toggleClass('header__inner--active');
 
-        /*$('.header__logo').toggleClass('menu__list--active');
-        $('.intro__btn').toggleClass('menu__list--active');*/
-    });
+    /*$('.header__logo').toggleClass('menu__list--active');
+    $('.intro__btn').toggleClass('menu__list--active');*/
+});
 $('.header__btn').on('click', function () {
     $('.header__btn').toggleClass('active');
 
-        /*$('.header__logo').toggleClass('menu__list--active');
-        $('.intro__btn').toggleClass('menu__list--active');*/
-    });
+    /*$('.header__logo').toggleClass('menu__list--active');
+    $('.intro__btn').toggleClass('menu__list--active');*/
+});
 
 (function ($) {
     $(function () {
@@ -124,9 +142,8 @@ $(".menu a").on("click", function (event) {
     event.preventDefault();
     var id = $(this).attr('href'),
         top = $(id).offset().top;
-    $('body,html').animate({
-        scrollTop: top
-    }, 1500);
+    tops = top - 80;
+    $('body,html').animate({ scrollTop: tops }, 1500);
 });
 
 /*для закрыть меню*/

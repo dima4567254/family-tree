@@ -160,81 +160,35 @@ body {
         width: 315px;
         height: 80px;
         object-fit: cover;
-        // z-index: 100;
     }
 
     //проверить может объединить
     &__mobile {
-        // width: 890px;
-        // height: 230px;
-        @include adaptiveValue("width", 890, 220);
-        @include adaptiveValue("height", 230, 55);
-        // @include adaptiveValue("width", 890, 800);
-        // @include adaptiveValue("height", 230, 200);
-        
-
+        width: 890px;
+        height: 230px;
         object-fit: cover;
 
-        // @media (max-width: 992px) {
-        //     max-width: 890px;
-        //     height: auto;
-        // }
+        @media (max-width: 1200px) {
+            width: 240px;
+            height: 60px;
+        }
     }
 
     &__footer {
-        // width: 570px;
-        // height: 150px;
-        @include adaptiveValue("width", 890, 220);
-        @include adaptiveValue("height", 230, 55);
+        @include adaptiveValue("width", 570, 140);
+        @include adaptiveValue("height", 190, 45);
         object-fit: contain;
     }
 }
 
 .title {
     font-weight: 700;
-
-
-    // @media (max-width: 1200px) {
-    //     font-size: 34px;
-    // }
-
-    // @media (max-width: 992px) {
-    //     font-size: 32px;
-    // }
-
-    // @media (max-width: 768px) {
-    //     font-size: 30px;
-    // }
-
-    // @media (max-width: 576px) {
-    //     font-size: 26px;
-    // }
-
-    // &--bem {
-    //     margin-bottom: 70px;
-
-    //     @media (max-width: 1200px) {
-    //         margin-bottom: 60px;
-    //     }
-
-    //     @media (max-width: 992px) {
-    //         margin-bottom: 50px;
-    //     }
-
-    //     @media (max-width: 768px) {
-    //         margin-bottom: 40px;
-    //     }
-
-    //     @media (max-width: 576px) {
-    //         margin-bottom: 30px;
-    //     }
-    // }
 }
 
 .section {
     // padding: 100px 0px;
-    @include adaptiveValue("padding-top", 100, 30);
-    @include adaptiveValue("padding-bottom", 100, 30);
+    @include adaptiveValue("padding-top", 100, 45);
+    @include adaptiveValue("padding-bottom", 100, 45);
 
 
     // &--bem {
@@ -269,6 +223,7 @@ body {
 
     &:hover {
         background-color: #21243d;
+        color: $white;
 
         // background-color: rgb(151, 71, 27);
     }

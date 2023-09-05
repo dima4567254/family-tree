@@ -2,24 +2,25 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'mexins';
 @import 'global';
 @import 'libs';
+
+// скролл норм
+// фокусы норм
+// валидатор норм
+// 0 у пх обнулил
+// js +- чисто
+// ---------------
 
 // подписал цифрами svg id
 // виддио винес
 // адаптировал текст 18 в др нет
-// проблемма флекса 768 там где много колонок сделать на гридах
-// старт что бы не ломался записать  guarantees 
+// проблемма флекса 768 там где много колонок
+// много текста в слайдере решил оставить как есть 
+
 
 // ---------------------
-
-
-//3!!! сделать одинаковые отступы у титулов
-
-
-
-//6 попробыавать адаптировать по другому через выравнивание
-
 .header {
     position: fixed;
     top: 0;
@@ -92,6 +93,7 @@
         color: rgba(0, 0, 0, 0.6);
         text-transform: uppercase;
         transition: color 0.5s;
+        outline-offset: 5px;
 
         @media (max-width: 992px) {
             display: block;
@@ -106,7 +108,7 @@
         }
 
         &:hover {
-            color: rgb(151, 71, 27);
+            color: $ac;
         }
 
         &:active {
@@ -117,7 +119,7 @@
             margin-right: 20px;
 
             @media (max-width: 992px) {
-                margin-right: 0px;
+                margin-right: 0;
             }
         }
     }
@@ -136,7 +138,7 @@
         }
 
         &:hover {
-            color: rgb(151, 71, 27);
+            color: $ac;
         }
 
         &:active {
@@ -153,7 +155,7 @@
     }
 
     &__mail {
-        color: rgba(93, 94, 106);
+        color: $silver;
         @include line-height(18, 28, px, );
         transition: color 0.5s;
 
@@ -166,7 +168,7 @@
         }
 
         &:hover {
-            color: rgb(151, 71, 27);
+            color: $ac;
         }
 
         &:active {
@@ -249,7 +251,7 @@
         span {
             height: 3px;
             width: 100%;
-            background-color: #000000;
+            background-color: $black;
             transition: all 0.5s;
         }
 
@@ -259,7 +261,7 @@
             content: '';
             height: 3px;
             width: 100%;
-            background-color: #000000;
+            background-color: $black;
             transition: all 0.5s;
         }
 
@@ -274,7 +276,7 @@
 }
 
 .header-fixed {
-    background-color: white;
+    background-color: $white;
     border-bottom: 1px solid rgba(33, 36, 61, .2);
 }
 
@@ -307,7 +309,7 @@
 
     &__link {
         transition: color 0.5s;
-        color: rgb(20, 20, 20);
+        color: $black2;
 
         @media (max-width: 576px) {
             display: block;
@@ -318,7 +320,7 @@
         }
 
         &:hover {
-            color: rgb(151, 71, 27);
+            color: $ac;
         }
 
         &:active {
@@ -374,7 +376,7 @@
     }
 
     &__title span {
-        color: rgb(151, 71, 27);
+        color: $ac;
     }
 
     &__btn {
@@ -389,10 +391,10 @@
 }
 
 .reviews {
-    background: rgb(250, 250, 250);
+    background: $white2;
 
     &__title {
-        color: rgb(120, 81, 59);
+        color: $brown;
         @include adaptiveValue("margin-bottom", 30, 20);
         font-size: 36px;
         text-align: center;
@@ -439,7 +441,7 @@
         }
 
         @media (max-width: 992px) {
-            padding: 0px;
+            padding: 0;
             width: 350px;
         }
     }
@@ -452,7 +454,7 @@
 
     &__text {
         font-size: 15px;
-        color: #cecece;
+        color: $silver2;
     }
 
     &__btn {
@@ -500,7 +502,7 @@
     }
 
     &__title {
-        color: rgb(235, 189, 126);
+        color: $brown2;
         font-size: 42px;
         position: relative;
         display: inline-block;
@@ -531,7 +533,7 @@
             right: 0;
             height: 2px;
             width: 100%;
-            background-color: rgb(204, 204, 204);
+            background-color: $silver3;
         }
     }
 
@@ -560,7 +562,7 @@
     }
 
     &__subtitle {
-        color: #f9d391;
+        color: $brown3;
         @include line-height(30, 39, px, );
         @include adaptiveValue("margin-bottom", 30, 20);
 
@@ -629,7 +631,7 @@
     }
 
     &__title {
-        color: rgb(151, 71, 27);
+        color: $ac;
         @include adaptiveValue("margin-bottom", 40, 20);
         font-size: 32px;
 
@@ -672,7 +674,7 @@
     }
 
     &__text span {
-        color: rgb(151, 71, 27);
+        color: $ac;
         @include line-height(28, 36, px, );
         display: block;
         @include adaptiveValue("margin-bottom", 90, 20);
@@ -724,7 +726,7 @@
         right: 0;
         bottom: 0;
         display: block;
-        background: rgba(30, 30, 35, 0.85);
+        background-color: rgba(30, 30, 35, 0.85);
         z-index: -1;
     }
 
@@ -732,12 +734,12 @@
         padding-left: 170px;
 
         @media (max-width: 1200px) {
-            padding-left: 0px;
+            padding-left: 0;
         }
     }
 
     &__title {
-        color: rgb(255, 208, 130);
+        color: $brown4;
         @include line-height(33, 46, px, );
         margin-bottom: 20px;
 
@@ -759,7 +761,7 @@
     }
 
     &__item {
-        color: rgb(255, 255, 255);
+        color: $white;
         @include line-height(20, 32, px, );
         margin-bottom: 10px;
 
@@ -781,7 +783,7 @@
     }
 
     &__item span {
-        color: rgb(76, 160, 89);
+        color: $green;
         font-size: 29px;
 
         @media (max-width: 1200px) {
@@ -811,7 +813,7 @@
     }
 
     &__title {
-        color: rgb(235, 189, 126);
+        color: $brown2;
         font-size: 42px;
         position: relative;
         display: inline-block;
@@ -843,7 +845,7 @@
             right: 0;
             height: 2px;
             width: 100%;
-            background-color: rgb(204, 204, 204);
+            background-color: $silver3;
         }
     }
 
@@ -907,14 +909,15 @@
     }
 
     &__link {
-        margin: 0 auto 30px auto;
-        display: flex;
+        margin: 0 auto;
+        @include adaptiveValue("margin-bottom", 30, 20);
         max-width: 30px;
+        display: block;
+        line-height: 0;
     }
 
     &__svg {
         border-radius: 50%;
-        @include adaptiveValue("margin-bottom", 30, 20);
         transition: opacity 0.5s;
 
         &:focus {
@@ -931,7 +934,7 @@
     }
 
     &__text {
-        color: rgb(93, 94, 106);
+        color: $silver4;
         @include line-height(18, 28, px, );
         text-align: center;
         max-width: 325px;
@@ -1008,7 +1011,7 @@
     }
 
     &__title {
-        color: rgb(120, 81, 59);
+        color: $brown;
         font-size: 42px;
         position: relative;
         display: inline-block;
@@ -1040,7 +1043,7 @@
             right: 0;
             height: 2px;
             width: 100%;
-            background-color: rgb(33, 36, 61);
+            background-color: $black3;
         }
     }
 
@@ -1103,14 +1106,14 @@
     }
 
     &__caption {
-        color: rgb(51, 51, 51);
+        color: $black4;
         @include line-height(18, 28, px, );
         font-weight: 700;
         margin-bottom: 5px;
     }
 
     &__prices {
-        color: #21243d;
+        color: $black3;
         @include line-height(30, 38, px, );
         font-weight: 700;
         @include adaptiveValue("margin-bottom", 60, 20);
@@ -1141,13 +1144,13 @@
     }
 
     &__item {
-        color: rgb(51, 51, 51);
+        color: $black4;
         @include line-height(18, 28, px, );
         margin-bottom: 5px;
     }
 
     &__text {
-        color: rgb(51, 51, 51);
+        color: $black4;
         @include adaptiveValue("margin-bottom", 30, 20);
     }
 
@@ -1194,7 +1197,7 @@
     }
 
     &__title {
-        color: rgb(255, 208, 130);
+        color: $brown4;
         font-size: 40px;
         position: relative;
         display: inline-block;
@@ -1226,7 +1229,7 @@
             right: 0;
             height: 2px;
             width: 100%;
-            background-color: rgba(255, 255, 255),
+            background-color: rgba(255, 255, 255);
         }
     }
 
@@ -1242,7 +1245,7 @@
     }
 
     &__item {
-        color: rgb(255, 255, 255);
+        color: $white;
         @include line-height(20, 32, px, );
         margin-bottom: 5px;
 
@@ -1264,7 +1267,7 @@
     }
 
     &__link {
-        color: rgb(136, 225, 242);
+        color: $blue;
         text-decoration: revert;
     }
 
@@ -1274,7 +1277,7 @@
     }
 
     &__text p {
-        color: rgb(255, 208, 130);
+        color: $brown4;
         font-weight: 700;
         font-size: 24px;
         max-width: 545px;
@@ -1282,7 +1285,7 @@
     }
 
     &__text span {
-        color: rgb(206, 206, 206);
+        color: $silver2;
         @include line-height(20, 32, px, );
 
         @media (max-width: 1200px) {
@@ -1314,8 +1317,6 @@
     }
 }
 
-
-// !!! почистить секцию
 .guarantees {
     &__box {
         display: flex;
@@ -1324,7 +1325,7 @@
     }
 
     &__title {
-        color: rgb(120, 81, 59);
+        color: $brown;
         font-size: 42px;
         position: relative;
         display: inline-block;
@@ -1365,10 +1366,6 @@
     }
 
     &__wrapper {
-        // display: flex;
-        // justify-content: center;
-        // flex-wrap: wrap;
-        // gap: 40px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -1383,32 +1380,18 @@
         }
     }
 
-    // &__right,
-    // &__left {
-    //     max-width: 565px;
-    //     gap: 40px;
-    //     // display: grid;
-    //     width: 100%;
-
-    //     @media (max-width: 1200px) {
-    //         max-width: 400px;
-    //     }
-    // }
-
     &__item {
-        padding: 40px 20px;
-        background-color: rgb(255, 225, 176);
+        padding: 40px 30px;
+        background-color: $brown5;
         border-radius: 6px;
         gap: 15px;
         display: flex;
-        // flex-direction: column;
         min-height: 100%;
         max-width: 565px;
-        flex: 0 0 50%;
+        flex: 0 0 48%;
 
         @media (max-width: 1200px) {
             padding: 30px;
-            flex: 0 0 48%;
         }
 
         @media (max-width: 992px) {
@@ -1425,80 +1408,38 @@
             display: block;
         }
 
-        @media (max-width: 576px) {}
-
         &--honesty {
-            background-color: #21243D;
+            background-color: $black3;
         }
-    }
-
-    &__inner {
-        display: flex;
-        // justify-content: start;
-
-
-        //  display: flex;
-        //  flex-direction: column;
-        //  min-height: 100%;
-        //  max-width: 370px;
-
-        @media (max-width: 1200px) {
-            min-height: 100%;
-        }
-
-        // @media (max-width: 576px) {
-        //     display: block;
-        // }
     }
 
     &__icon {
-        background-color: #21243D;
+        background-color: $black3;
         border-radius: 50%;
         width: 100px;
         height: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 0 0 18%;
-
-        @media (max-width: 1200px) {
-            // flex: 1 1 48%;
-            // flex: 1 0 30%;
-            flex: 1 0 25%;
-        }
-
-        @media (max-width: 992px) {
-            flex: 0 0 20%;
-        }
-
-        // @media (max-width: 992px) {
-        //     flex: 0 0 15%;
-        // }
-        @media (max-width: 576px) {
-            flex: 0 0 40%;
-        }
+        flex: 0 0 100px;
 
         @media (max-width: 576px) {
             margin-bottom: 20px;
         }
 
         &--honesty {
-            background-color: rgb(255, 225, 176);
+            background-color: $brown5;
         }
     }
 
     &__wrap {
-        max-width: 390px;
-
         display: flex;
         flex-direction: column;
-        min-height: 100%;
-        max-width: 370px;
     }
 
     &__subtitle {
         margin-bottom: 10px;
-        color: rgb(33, 36, 61);
+        color: $black3;
         font-size: 24px;
 
         &--honesty {
@@ -1507,22 +1448,12 @@
     }
 
     &__text {
-        color: rgb(93, 94, 106);
+        color: $silver4;
         @include line-height(18, 28, px, );
-        flex: 1 1 auto;
-        // flex-wrap: wrap; //!!!
-
-        @media (max-width: 1200px) {
-            flex: 1 1 auto;
-        }
 
         &--honesty {
-            color: rgb(159, 207, 231);
+            color: $blue2;
         }
-    }
-
-    &__svg {
-        // flex: 0 0 10%;
     }
 }
 
@@ -1542,12 +1473,12 @@
         left: 0;
         bottom: 0;
         display: block;
-        background: rgba(35, 29, 20, 0.71);
+        background-color: rgba(35, 29, 20, 0.71);
         z-index: -1;
     }
 
     &__title {
-        color: rgb(255, 208, 130);
+        color: $brown4;
         text-align: center;
         font-size: 42px;
         font-weight: 600;
@@ -1611,7 +1542,7 @@
     }
 
     &__subtitle {
-        color: rgb(255, 208, 130);
+        color: $brown4;
         font-size: 24px;
         @include adaptiveValue("margin-bottom", 30, 20);
     }
@@ -1619,7 +1550,7 @@
     &__link {
         transition: opacity 0.5s;
         margin-bottom: 20px;
-        display: block;
+        display: inline-block;
         line-height: 0;
 
         &:focus {
@@ -1640,7 +1571,7 @@
     }
 
     &__text {
-        color: rgb(255, 255, 255);
+        color: $white;
     }
 }
 
@@ -1652,11 +1583,11 @@
 }
 
 .swiper-button-next {
-    right: 0;
+    right: 1%;
 }
 
 .swiper-button-prev {
-    left: 0;
+    left: 1%;
 }
 
 .swiper-button-next,
@@ -1685,7 +1616,7 @@
 }
 
 .faq {
-    background: rgba(255, 246, 230, 0.53);
+    background-color: rgba(255, 246, 230, 0.53);
     background-image: url('../images/faq-bg.jpg');
     background-position: center;
     background-size: cover;
@@ -1700,13 +1631,13 @@
         right: 0;
         left: 0;
         bottom: 0;
-        background: rgba(255, 246, 230, 0.53);
+        background-color: rgba(255, 246, 230, 0.53);
         z-index: -1;
     }
 
 
     &__title {
-        color: rgb(120, 81, 59);
+        color: $brown;
         text-align: center;
         font-size: 42px;
         text-transform: uppercase;
@@ -1740,7 +1671,7 @@
         }
 
         @media (max-width: 576px) {
-            padding-right: 0px;
+            padding-right: 0;
         }
     }
 
@@ -1757,7 +1688,7 @@
     }
 
     &__subtitle {
-        color: rgb(33, 36, 61);
+        color: $black3;
         font-size: 24px;
         padding-right: 15px;
 
@@ -1802,7 +1733,7 @@
     }
 
     &__text {
-        color: rgb(93, 94, 106);
+        color: $silver4;
         @include line-height(18, 28, px, );
     }
 
@@ -1838,7 +1769,7 @@
     }
 
     &__city {
-        color: rgb(20, 20, 20);
+        color: $black2;
         font-size: 28px;
         font-weight: 700;
         @include adaptiveValue("margin-bottom", 40, 20);
@@ -1872,7 +1803,7 @@
         }
 
         &:hover {
-            color: rgb(151, 71, 27);
+            color: $ac;
         }
 
         &:active {
@@ -1881,13 +1812,13 @@
     }
 
     &__text {
-        color: rgb(120, 81, 59);
+        color: $brown;
         font-size: 16px;
         @include adaptiveValue("margin-bottom", 30, 20);
     }
 
     &__copy {
-        color: rgb(120, 81, 59);
+        color: $brown;
         text-align: center;
 
         @media (max-width: 768px) {
@@ -1912,6 +1843,8 @@
 
     &__youtube,
     &__link {
+        line-height: 0;
+        display: block;
         transition: color 0.5s,
             opacity 0.5s;
 
@@ -1934,7 +1867,7 @@
     }
 
     &__youtube {
-        background-color: red;
+        background-color: $red;
         width: 30px;
         height: 30px;
         display: flex;
@@ -1996,7 +1929,7 @@
             right: 0;
             left: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.8);
             z-index: -1;
         }
     }
@@ -2024,7 +1957,7 @@
         span {
             height: 2px;
             width: 100%;
-            background-color: #000000;
+            background-color: $black;
             transform: scale(0);
         }
 
@@ -2034,7 +1967,7 @@
             content: '';
             height: 2px;
             width: 100%;
-            background-color: #000000;
+            background-color: $black;
         }
 
         &::before {
@@ -2056,7 +1989,7 @@
         text-align: center;
         margin-bottom: 65px;
         @include adaptiveValue("margin-bottom", 65, 20);
-        color: rgb(20, 20, 20);
+        color: $black2;
 
         @media (max-width: 1200px) {
             font-size: 29px;
@@ -2097,7 +2030,7 @@
     }
 
     &__label {
-        color: rgb(93, 94, 106);
+        color: $silver4;
         font-size: 18px;
         font-weight: 400;
         line-height: 28px;
@@ -2119,7 +2052,7 @@
 
                 .form__radio,
                 .form__checkbox {
-                    border: 2px solid rgb(93, 94, 106);
+                    border: 2px solid $silver4;
                 }
             }
 
@@ -2151,7 +2084,7 @@
     }
 
     &__text {
-        color: rgb(93, 94, 106);
+        color: $silver4;
         font-size: 18px;
         font-weight: 400;
         line-height: 28px;
@@ -2159,11 +2092,11 @@
     }
 
     &__btn {
-        color: rgb(255, 255, 255);
+        color: $white;
         width: 100%;
         font-weight: 700;
         font-size: 16px;
-        background-color: rgb(43, 133, 57);
+        background-color: $green2;
         border: none;
         padding: 15px 26px;
         @include adaptiveValue("padding-left", 26, 20);
@@ -2175,7 +2108,7 @@
         }
 
         &:hover {
-            background-color: #21243d;
+            background-color: $black3;
         }
 
         &:active {
@@ -2185,13 +2118,12 @@
 }
 
 // Стили радио кнопок 
-// ----------------------------------
 .jq-radio.checked .jq-radio__div {
     margin: 2px 0 0 2px;
 }
 
 .jq-radio .form__radio {
-    color: rgb(93, 94, 106);
+    color: $silver4;
 }
 
 .jq-radio {
@@ -2203,7 +2135,7 @@
     }
 
     &:hover {
-        border: 2px solid rgb(93, 94, 106);
+        border: 2px solid $silver4;
     }
 
     &:active {
@@ -2214,17 +2146,15 @@
 }
 
 .jq-radio.checked {
-    border: 2px solid rgb(93, 94, 106);
+    border: 2px solid $silver4;
 }
 
 .jq-radio.checked .jq-radio__div {
-    background: rgb(93, 94, 106);
+    background: $silver4;
     width: 8px;
     height: 8px;
 }
 
 .jq-radio .form__radio {
-    color: rgb(93, 94, 106);
+    color: $silver4;
 }
-
-// ----------------------------------

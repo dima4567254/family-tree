@@ -1,33 +1,17 @@
 
 AOS.init({
-    // delay: 100, // values from 0 to 3000, with step 50ms
     duration: 900, //длительность работает900
-    // once: false, // whether animation should happen only once - while scrolling down
     mirror: true,
-    // once: true,
     disable: 'phone',
     disable: 'tablet',
     disable: 'mobile',
-    // ---
-    // anchorPlacement: 'top',
-    // offset: 200,
-    // throttleDelay: 99, 
-    // easing: "cubic-bezier(.4, .8, .74, 1)", once: !0
-    // 'tablet', 'mobile',
-    // активация библиотеки AOS
 })
 
 $('.header__btn').on('click', function () {
     $('.header__inner').toggleClass('header__inner--active');
-
-    /*$('.header__logo').toggleClass('menu__list--active');
-    $('.intro__btn').toggleClass('menu__list--active');*/
 });
 $('.header__btn').on('click', function () {
     $('.header__btn').toggleClass('active');
-
-    /*$('.header__logo').toggleClass('menu__list--active');
-    $('.intro__btn').toggleClass('menu__list--active');*/
 });
 
 (function ($) {
@@ -55,30 +39,15 @@ $(function name(params) {
         loop: true,
         loopedslides: 1,
         slidesPerView: 1,
-        autoplay: {
-            delay: 5000,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        // },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
     });
 })
-// $(function name(params) {
-//     const Recommendations = new Swiper('.Recommendations', {
-//         // slidesPerView: 1,
-//         // loop: true,
-//         // loopedslides: 1,
-//         // slidesPerView: 2,
-//         // grid: {
-//         //     rows: 2,
-//         // },
-//         navigation: {
-//             nextEl: ".swiper-button-next",
-//             prevEl: ".swiper-button-prev",
-//         },
-//     });
-// });
 
 $(document).ready(function () {
     $('.faq__accordion > li  >.faq__text').hide();
@@ -127,16 +96,6 @@ $('.modal').click(function () {
     event.stopPropagation();
 });
 
-// (function ($) {
-//     $(function () {
-
-//         $('checkbox').styler();
-
-//     });
-// })(jQuery);
-
-
-
 // --------------------
 $(".menu a").on("click", function (event) {
     event.preventDefault();
@@ -146,43 +105,4 @@ $(".menu a").on("click", function (event) {
     $('body,html').animate({ scrollTop: tops }, 1500);
 });
 
-/*для закрыть меню*/
-/*
-          $('.menu__btn').on('click', function () {
-              $('.menu__items').toggleClass('menu__items--active');
-          });
-          $('.menu__btn').on('click', function () {
-              $('.menu__btn').toggleClass('active');
-          });
-       
-        $('.home__slider').slick({
-            dots: true,
-            arrows: false,
-             responsive: [
-
-
-                 {
-                     breakpoint: 1150,
-                     settings: {
-                         slidesToShow: 4,
-                     }
-                 },
-                 {
-                     breakpoint: 1000,
-                     settings: {
-                         slidesToShow: 3,
-                     }
-                 },
-                 {
-                     breakpoint: 620,
-                     settings: {
-                         slidesToShow: 2,
-                         slidesToScroll: 2,
-                     }
-                 },
-             ]
-        });
-       
-       
-       */
 

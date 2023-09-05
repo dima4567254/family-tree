@@ -106,10 +106,6 @@ html {
     @media (max-width: 768px) {
         font-size: 40%;
     }
-
-    @media (max-width: 576px) {
-        // font-size: 30%;
-    }
 }
 
 html,
@@ -162,16 +158,10 @@ body {
         object-fit: cover;
     }
 
-    //проверить может объединить
     &__mobile {
-        width: 890px;
-        height: 230px;
+        width: 240px;
+        height: 60px;
         object-fit: cover;
-
-        @media (max-width: 1200px) {
-            width: 240px;
-            height: 60px;
-        }
     }
 
     &__footer {
@@ -186,26 +176,8 @@ body {
 }
 
 .section {
-    // padding: 100px 0px;
-    @include adaptiveValue("padding-top", 100, 45);
-    @include adaptiveValue("padding-bottom", 100, 45);
-
-
-    // &--bem {
-    //     padding: $padding-main 0;
-
-    //     @media (max-width: 992px) {
-    //         padding: $padding-992 0;
-    //     }
-
-    //     @media (max-width: 768px) {
-    //         padding: $padding-768 0;
-    //     }
-
-    //     @media (max-width: 576px) {
-    //         padding: $padding-576 0;
-    //     }
-    // }
+    @include adaptiveValue("padding-top", 100, 65);
+    @include adaptiveValue("padding-bottom", 100, 65);
 }
 
 .btn {
@@ -224,8 +196,6 @@ body {
     &:hover {
         background-color: #21243d;
         color: $white;
-
-        // background-color: rgb(151, 71, 27);
     }
 
     &:active {
@@ -241,7 +211,6 @@ body {
     position: relative;
     border-radius: 6px;
     transition: color 0.5s;
-    // возможно надо макширену
 
     &:focus {
         color: $focus;
@@ -258,32 +227,6 @@ body {
         color: $active;
     }
 
-    //    &__icon {
-    //        position: absolute;
-    //        top: 50%;
-    //        left: 50%;
-    //        transform: translateX(-50%);
-    //        width: 65px;
-    //        height: 40px;
-    //        background: rgba(0, 0, 0, .55);
-    //        border-radius: 6px;
-    //        position: relative;
-
-    //        &::before {
-    //            // !!!отимизировать
-    //            content: "";
-    //            position: absolute;
-    //            top: 30%;
-    //            left: 50%;
-    //            transform: translateX(-50%);
-    //            z-index: 999;
-    //            border-color: transparent transparent transparent #fff;
-    //            border-style: solid;
-    //            border-width: 9.5px 0 9.5px 17px;
-    //        }
-    //    }
-
-    // попробовать обеденить слои иконок
     &__icon {
         position: absolute;
         top: 50%;
@@ -296,7 +239,6 @@ body {
         position: relative;
 
         &::before {
-            // !!!отимизировать
             content: "";
             position: absolute;
             top: 30%;
@@ -309,8 +251,6 @@ body {
         }
     }
 }
-
-// footer__link--indent
 
 @function max($numbers...) {
     @return m#{a}x(#{$numbers});

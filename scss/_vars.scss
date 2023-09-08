@@ -1,116 +1,32 @@
-/*$Butler: 'Butler',
-sans-serif;*/
-
-// $active: red;
-
-// $focus:blue;
-
 $active: none;
 $focus:none;
-$hover:#000010;
+// $hover:#000010;
 
-// $ac: #fcd7b6;
-// $default:$black;
+$ac: #97471B;//8
+$brown: #78513B; //6
+$brown2: #ebbd7e; //2
+$brown3: #f9d391; //1
+$brown4: #ffd082; //1
+$brown5: #FFE1B0; //1
+
+$red:#FF0000; //1
+$red2:#d73838; //1
+$green:#4ca059; //1
+$green2:#2B8539; //1
+
+$blue:#88e1f2;
+$blue2:#9fcfe7;
+
 $white: #FFFFFF;
+$white2: #fafafa;
+$silver: #5D5E6A;//1
+$silver2: #cecece; //1
+$silver3: #cccccc; //1
+$silver4: #5d5e6a; //1
+
 $black: #000000;
-// $title: #436372;
-// $btn-menu:$white;
+$black2: #141414;//3
+$black3: #21243d; //3
+$black4: #333333; //3
+$black5: #2A1F19; //3
 
-/*$ac: #fcd7b6;
-
-/*accent*/
-// $orange: #FF9900;
-// $green:#14B4BE;
-// $green:#14B4BE;
-// $antique:#fde7d3;
-// $default: #243f4d;
-// $Cream: #feefe2;
-// $Crayola: #c2d2db;
-// $red: #e72828;
-// $red1 :#fe3e57;
-// $orange: #ffa500;
-
-$padding-main:100px;
-$padding-1200:60px;
-$padding-992:50px; //70
-$padding-768:40px; //50
-$padding-576:30px;
-//section
-
-
-
-
-
-// @mixin line-clamp-box($line-clamp, ) {
-//     display: -webkit-box;
-//     -webkit-line-clamp: $line-clamp;
-//     -webkit-box-orient: vertical;
-//     overflow: hidden;
-// }
-
-// @mixin line-clamp-inline($line-clamp, ) {
-//     display: -webkit-inline-flex;
-//     -webkit-line-clamp: $line-clamp;
-//     -webkit-box-orient: vertical;
-//     overflow: hidden;
-// }
-
-// @mixin line-clamp-one($max-width, ) {
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     display: block;
-//     max-width: $max-width;
-// }
-
-// @mixin line-clamp($line-clamp, ) {
-//     display: -webkit-box;
-//     -webkit-line-clamp: $line-clamp;
-//     -webkit-box-orient: vertical;
-//     overflow: hidden;
-
-// }
-
-// @mixin line-height($font-size, $line-height, ) {
-//     line-height: ($line-height / $font-size)
-// }
-
-
-
-// @mixin clamp($font-size,
-//     $line-height,
-//     $lines-to-show) {
-//     // display: block; // Fallback for non-webkit browsers
-//     display: -webkit-box;
-//     font-size: rem($font-size);
-//     max-height: rem(($font-size * $line-height * $lines-to-show)); // Fallback for non-webkit browsers
-//     line-height: $line-height;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     -webkit-box-orient: vertical;
-//     -webkit-line-clamp: $lines-to-show;
-// }
-
-
-
-// @mixin line-height($font-size, $line-height, ) {
-
-//     line-height: ( $line-height / $font-size)
-// }
-/*
-@include clamp(5);
-*/
-
-// $browser-context: 16;
-
-// @function em($pixels, $context: $browser-context) {
-//   @if (unitless($pixels)) {
-//     $pixels: $pixels * 1px;
-//   }
-
-//   @if (unitless($context)) {
-//     $context: $context * 1px;
-//   }
-
-//   @return $pixels / $context * 1em;
-// }

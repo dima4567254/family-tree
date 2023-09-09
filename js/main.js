@@ -4,6 +4,7 @@ AOS.init({
     disable: 'phone',
     disable: 'tablet',
     disable: 'mobile',
+    // активация aos
 })
 
 $('.header__btn').on('click', function () {
@@ -20,30 +21,22 @@ $('.header__btn').on('click', function () {
         });
     });
 })(jQuery);
+// активация formstyler
 
-// $(function () {
-//     let header = $('.header');
 
-//     $(window).scroll(function () {
-//         if ($(this).scrollTop() > 100) {
-//             header.addClass('header-fixed');
-//         } else {
-//             header.removeClass('header-fixed');
-//         }
-//     });
-// });
+const header = document.querySelector('header');
 
-/** Функция для фиксированной шапки при скролле */
-const html = document.documentElement;
-const firstScreen = document.querySelector('[data-observ]');
+window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY;
 
-const headerStickyObserver = new IntersectionObserver(([entry]) => {
-    html.classList.toggle('header-fixed', !entry.isIntersecting);
+    if (scrollY >= header.offsetHeight) {
+        header.classList.add('header-fixed');
+    } else {
+        header.classList.remove('header-fixed');
+    }
 });
+// Функция для фиксированной шапки при скролле
 
-if (firstScreen) {
-    headerStickyObserver.observe(firstScreen);
-}
 
 
 $(function name(params) {

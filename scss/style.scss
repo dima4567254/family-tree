@@ -330,7 +330,7 @@
 }
 
 .intro {
-    background-image: url('../images/intro-bg.webp');
+    background-image: url('../images/intro-bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -472,7 +472,7 @@
 }
 
 .service {
-    background-image: url('../images/service-bg.webp');
+    background-image: url('../images/service-bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -607,7 +607,7 @@
 }
 
 .history {
-    background-image: url('../images/history.webp');
+    background-image: url('../images/history.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -707,7 +707,7 @@
 }
 
 .pedigree {
-    background-image: url('../images/pedigree.webp');
+    background-image: url('../images/pedigree.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -881,7 +881,6 @@
         margin-bottom: 10px;
 
         @media (max-width: 768px) {
-            width: 370px;
             height: 350px;
         }
     }
@@ -1184,7 +1183,7 @@
 }
 
 .results {
-    background-image: url('../images/results.webp');
+    background-image: url('../images/results.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1618,7 +1617,7 @@
 
 .faq {
     background-color: rgba(255, 246, 230, 0.53);
-    background-image: url('../images/faq-bg.webp');
+    background-image: url('../images/faq-bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1750,7 +1749,7 @@
 }
 
 .footer {
-    background-image: url('../images/footer-bg.webp');
+    background-image: url('../images/footer-bg.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

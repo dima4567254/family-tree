@@ -1,0 +1,99 @@
+.history {
+    background-image: url('../images/history.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 90vh;
+
+    @media (max-width: 1200px) {
+        height: 100%;
+    }
+
+    &__box {
+        max-width: 645px;
+        margin-left: auto;
+
+        @media (max-width: 992px) {
+            max-width: 500px;
+        }
+
+        @media (max-width: 576px) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        color: $ac;
+        @include adaptiveValue("margin-bottom", 40, 20);
+        font-size: 32px;
+
+        @media (max-width: 1200px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 28px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 26px;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 24px;
+        }
+    }
+
+    &__text p {
+        @include line-height(20, 32, px, );
+        @include adaptiveValue("margin-bottom", 80, 20);
+
+        @media (max-width: 1200px) {
+            font-size: 19px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 17px;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 16px;
+        }
+    }
+
+    &__text span {
+        color: $ac;
+        @include line-height(28, 36, px, );
+        display: block;
+        @include adaptiveValue("margin-bottom", 90, 20);
+
+        @media (max-width: 1200px) {
+            font-size: 26px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 22px;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 20px;
+        }
+    }
+
+    &__btn {
+        padding: 18px 30px;
+        @include adaptiveValue("padding-bottom", 18, 10);
+        @include adaptiveValue("padding-top", 18, 10);
+        @include adaptiveValue("padding-left", 30, 10);
+        @include adaptiveValue("padding-right", 30, 10);
+    }
+}

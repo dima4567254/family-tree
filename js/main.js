@@ -1,5 +1,9 @@
 AOS.init({
+<<<<<<< HEAD
     duration: 900,
+=======
+    duration: 900, 
+>>>>>>> 7ab694c7a3a9c96d3dd970b21fbac5fd0cf7460b
     mirror: true,
     disable: 'phone',
     disable: 'tablet',

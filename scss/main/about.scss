@@ -39,7 +39,7 @@
             right: 0;
             height: 2px;
             width: 100%;
-            background-color: $silver3;
+            background-color: $gray3;
         }
     }
 
@@ -127,7 +127,7 @@
     }
 
     &__text {
-        color: $silver4;
+        color: $gray;
         @include line-height(18, 28, px, );
         text-align: center;
         max-width: 325px;

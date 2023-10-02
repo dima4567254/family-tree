@@ -132,7 +132,7 @@
     }
 
     &__mail {
-        color: $silver;
+        color: $gray;
         @include line-height(18, 28, px, );
         transition: color .5s;
 
@@ -193,8 +193,8 @@
             opacity: 0;
             z-index: -100;
 
-            &.header__inner--active {
-                transform: translateY(0%);
+            &.active {
+                transform: translateY(0);
                 opacity: 1;
                 z-index: 10;
             }

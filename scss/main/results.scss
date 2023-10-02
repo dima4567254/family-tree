@@ -102,7 +102,7 @@
     }
 
     &__text span {
-        color: $silver2;
+        color: $gray2;
         @include line-height(20, 32, px, );
 
         @media (max-width: 1200px) {

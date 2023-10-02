@@ -1,9 +1,7 @@
+const header = document.querySelector('header');
+
 AOS.init({
-<<<<<<< HEAD
     duration: 900,
-=======
-    duration: 900, 
->>>>>>> 7ab694c7a3a9c96d3dd970b21fbac5fd0cf7460b
     mirror: true,
     disable: 'phone',
     disable: 'tablet',
@@ -12,10 +10,8 @@ AOS.init({
 })
 
 $('.header__btn').on('click', function () {
-    $('.header__inner').toggleClass('header__inner--active');
-});
-$('.header__btn').on('click', function () {
-    $('.header__btn').toggleClass('active');
+    $('.header__inner, .header__btn').toggleClass('active');
+    // Открыть, закрыть, крестик.
 });
 
 (function ($) {
@@ -28,8 +24,6 @@ $('.header__btn').on('click', function () {
 // активация formstyler
 
 
-const header = document.querySelector('header');
-
 window.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
 
@@ -41,7 +35,8 @@ window.addEventListener('scroll', function () {
 });
 // Функция для фиксированной шапки при скролле
 
-
+$('a[href="' + this.location.pathname + '"]').parent().addClass('header-fixed');
+// что бы класс не пропадал
 
 $(function name(params) {
     const Recommendations = new Swiper('.Recommendations', {
@@ -73,34 +68,6 @@ $(document).ready(function () {
     });
 });
 
-const modalWindow = document.querySelector('.modal');
-let elements = document.querySelectorAll('.modal-window');
-
-for (let i = 0; i < elements.length; i++) {/*прокручиваем в цикле все элементы*/
-    elements[i].addEventListener('click', function () {  /*при клике на элемент */
-        if (modalWindow.classList.contains('modal-open')) {
-            modalWindow.classList.remove('modal-open');
-        } else {
-            modalWindow.classList.add('modal-open');
-        }
-        document.onkeydown = function (event) {
-            if (event.keyCode == 27) {
-                modalWindow.classList.remove('modal-open');
-            }
-        }
-    })
-}
-
-// close modal
-$('.modal').click(function () {
-    var select = $('.modal__inner');
-    if ($(event.target).closest(select).length)
-        return;
-    $('.modal').toggleClass('modal-open');
-    $(document).unbind('click');
-    event.stopPropagation();
-});
-
 $(".menu a").on("click", function (event) {
     event.preventDefault();
     var id = $(this).attr('href'),
@@ -109,4 +76,96 @@ $(".menu a").on("click", function (event) {
     $('body,html').animate({ scrollTop: tops }, 1500);
 });
 
+const popupLinks = document.querySelectorAll('.modal-window');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll(".lock-padding");
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+let unlock = true;
+const timeout = 800;
 
+if (popupLinks.length > 0) {
+    for (let index = 0; index < popupLinks.length; index++) {
+        const popupLink = popupLinks[index];
+        popupLink.addEventListener("click", function (e) {
+            const popupName = popupLink.getAttribute('href').replace('#', '');
+            const curentPopup = document.getElementById(popupName);
+            popupOpen(curentPopup);
+            e.preventDefault();
+        });
+    }
+}
+
+if (popupCloseIcon.length > 0) {
+    for (let index = 0; index < popupCloseIcon.length; index++) {
+        const el = popupCloseIcon[index];
+        el.addEventListener('click', function (e) {
+            popupClose(el.closest('.modal'));
+            e.preventDefault();
+        });
+    }
+}
+
+function popupOpen(curentPopup) {
+    if (curentPopup && unlock) {
+        const popupActive = document.querySelector('.modal.open');
+        if (popupActive) {
+            popupClose(popupActive, false);
+        } else {
+            bodyLock();
+        }
+        curentPopup.classList.add('open');
+        curentPopup.addEventListener("click", function (e) {
+            if (!e.target.closest('.modal__inner')) {
+                popupClose(e.target.closest('.modal'));
+            }
+        });
+    }
+}
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+        popupActive.classList.remove('open');
+        if (doUnlock) {
+            bodyUnLock();
+        }
+    }
+}
+
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+    if (lockPadding.length > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
+    }
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add('lock');
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+
+}
+function bodyUnLock() {
+    setTimeout(function () {
+        if (lockPadding.length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.style.paddingRight = '0px';
+            }
+        }
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+    }, timeout);
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.which === 27) {
+        const popupActive = document.querySelector('.modal.open');
+        popupClose(popupActive);
+    }
+});

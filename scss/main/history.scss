@@ -89,7 +89,7 @@
         }
     }
 
-    &__btn {
+    &__link-modal {
         padding: 18px 30px;
         @include adaptiveValue("padding-bottom", 18, 10);
         @include adaptiveValue("padding-top", 18, 10);

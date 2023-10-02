@@ -49,8 +49,8 @@
         color: $ac;
     }
 
-    &__btn {
-        display: flex;
+    &__link-modal {
+        display: table;
         margin: 0 auto;
         padding: 18px 30px;
         @include adaptiveValue("padding-bottom", 18, 10);

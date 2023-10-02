@@ -82,11 +82,7 @@ body {
     border: 2px solid rgba(0, 0, 0, 0);
     background-color: $red2;
     color: $white;
-<<<<<<< HEAD
-    transition: background-color .5s, color .5s;
-=======
     transition: background-color 0.5s;
->>>>>>> 7ab694c7a3a9c96d3dd970b21fbac5fd0cf7460b
 
     &:focus {
         color: $focus;
@@ -117,11 +113,7 @@ body {
 
     &:hover {
         .video__icon {
-<<<<<<< HEAD
             transition: background-color .5s;
-=======
-            transition: background-color 0.5s;
->>>>>>> 7ab694c7a3a9c96d3dd970b21fbac5fd0cf7460b
             background-color: $red;
         }
     }

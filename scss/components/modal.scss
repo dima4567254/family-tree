@@ -1,3 +1,7 @@
+body.lock {
+    overflow: hidden;
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -11,10 +15,18 @@
     overflow-y: auto;
     overflow-x: hidden;
     backdrop-filter: blur(4rem);
-    transition: opacity .5s,
-        overflow .5s;
     opacity: 0;
-    z-index: -300;
+    z-index: 300;
+    visibility: hidden;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+
+        .modal__inner {
+            transform: perspective(600px) translate(0, 0) rotateX(0);
+        }
+    }
 
     &__inner {
         margin-top: 10%;
@@ -27,6 +39,8 @@
         max-width: 770px;
         padding: 30px 100px 80px 100px;
         z-index: 1;
+        transition: all .8s ease 0s;
+        transform: perspective(600px) translate(0, -100%) rotateX(45deg);
 
         @media (max-width: 1200px) {
             padding: 30px 80px;
@@ -72,24 +86,21 @@
         width: 25px;
         height: 25px;
         position: relative;
-
         padding: 0;
         z-index: 10;
 
-        span {
+        span,
+        &::before,
+        &::after {
             height: 2px;
             width: 100%;
             background-color: $black;
-            transform: scale(0);
         }
 
         &::before,
         &::after {
             position: absolute;
             content: '';
-            height: 2px;
-            width: 100%;
-            background-color: $black;
         }
 
         &::before {
@@ -131,11 +142,6 @@
     }
 }
 
-.modal-open {
-    opacity: 1;
-    z-index: 300;
-}
-
 .form {
     max-width: 485px;
 
@@ -152,7 +158,7 @@
     }
 
     &__label {
-        color: $silver4;
+        color: $gray;
         line-height: 28px;
         display: block;
 
@@ -172,7 +178,7 @@
 
                 .form__radio,
                 .form__checkbox {
-                    border: 2px solid $silver4;
+                    border: 2px solid $gray;
                 }
             }
 
@@ -204,7 +210,7 @@
     }
 
     &__text {
-        color: $silver4;
+        color: $gray;
         line-height: 28px;
         margin-bottom: 15px;
     }
@@ -242,7 +248,7 @@
 }
 
 .jq-radio .form__radio {
-    color: $silver4;
+    color: $gray;
 }
 
 .jq-radio {
@@ -255,7 +261,7 @@
     }
 
     &:hover {
-        border: 2px solid $silver4;
+        border: 2px solid $gray;
     }
 
     &:active {
@@ -265,15 +271,15 @@
 }
 
 .jq-radio.checked {
-    border: 2px solid $silver4;
+    border: 2px solid $gray;
 }
 
 .jq-radio.checked .jq-radio__div {
-    background: $silver4;
+    background: $gray;
     width: 8px;
     height: 8px;
 }
 
 .jq-radio .form__radio {
-    color: $silver4;
+    color: $gray;
 }

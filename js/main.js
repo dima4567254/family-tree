@@ -23,7 +23,6 @@ $('.header__btn').on('click', function () {
 })(jQuery);
 // активация formstyler
 
-
 window.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
 

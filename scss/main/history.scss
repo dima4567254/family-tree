@@ -90,10 +90,7 @@
     }
 
     &__link-modal {
-        padding: 18px 30px;
-        @include adaptiveValue("padding-bottom", 18, 10);
-        @include adaptiveValue("padding-top", 18, 10);
-        @include adaptiveValue("padding-left", 30, 10);
-        @include adaptiveValue("padding-right", 30, 10);
+        padding: 9px 30px;
+        display: inline-block;
     }
 }

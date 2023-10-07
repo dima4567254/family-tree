@@ -86,6 +86,19 @@
     &__link {
         color: $blue;
         text-decoration: revert;
+        transition: color 0.5s;
+
+        &:focus {
+            color: $focus;
+        }
+
+        &:hover {
+            color: $ac;
+        }
+
+        &:active {
+            color: $active;
+        }
     }
 
     &__text {

@@ -1,5 +1,5 @@
 .footer {
-    background-image: url('../images/footer-bg.webp');
+    background-image: url('../images/dist/footer-bg.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -46,6 +46,16 @@
         text-decoration: revert;
         margin-bottom: 10px;
         display: block;
+    }
+
+    &__text {
+        color: $brown;
+        font-size: 16px;
+        @include adaptiveValue("margin-bottom", 30, 20);
+    }
+
+    &__link,
+    &__red {
         transition: color .5s;
 
         &:focus {
@@ -59,12 +69,6 @@
         &:active {
             color: $active;
         }
-    }
-
-    &__text {
-        color: $brown;
-        font-size: 16px;
-        @include adaptiveValue("margin-bottom", 30, 20);
     }
 
     &__copy {

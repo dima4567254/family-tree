@@ -25,7 +25,11 @@
                         </a>
                     </div>
                     <a class="header__logo logo" href="#">
-                        <img class="logo__header" src="images/logo.webp" alt="logo">
+                        <picture>
+                            <source srcset="images/dist/logo.avif" type="image/avif">
+                            <source srcset="images/dist/logo.webp" type="image/webp">
+                            <img class="logo__header" src="images/dist/logo.png" alt="logo">
+                        </picture>
                     </a>
                 </div>
                 <div class="header__links">
@@ -43,7 +47,11 @@
             <div class="header__mobile">
                 <div class="header__wrapper">
                     <a class="header__logo logo" href="#">
-                        <img class="logo__mobile" src="images/logo.webp" alt="logo">
+                        <picture>
+                            <source srcset="images/dist/logo.avif" type="image/avif">
+                            <source srcset="images/dist/logo.webp" type="image/webp"><img class="logo__mobile"
+                                src="images/dist/logo.png" alt="logo">
+                        </picture>
                     </a>
                     <button class="header__btn" type="button">
                         <span></span>
@@ -197,7 +205,8 @@
                 </h2>
                 <ul class="reviews__items">
                     <li class="reviews__item">
-                        <a class="reviews__video video" data-fancybox style="background-image: url('images/yana.webp');"
+                        <a class="reviews__video video" data-fancybox
+                            style="background-image: url('images/dist/yana.jpg');"
                             href="https://www.youtube.com/watch?v=psIAE9IyZKI">
                             <span class="sr-only">
                                 Відкрити відео відгук з яною
@@ -217,7 +226,7 @@
                     </li>
                     <li class="reviews__item">
                         <a class="reviews__video video" data-fancybox
-                            style="background-image: url('images/оksana.webp');"
+                            style="background-image: url('images/dist/оksana.jpg');"
                             href="https://www.youtube.com/watch?v=DGqYvsMfezM">
                             <span class="sr-only">
                                 Відкрити відео відгук з оксаною
@@ -236,7 +245,8 @@
                         </div>
                     </li>
                     <li class="reviews__item">
-                        <a class="reviews__video video" data-fancybox style="background-image: url('images/artem.webp')"
+                        <a class="reviews__video video" data-fancybox
+                            style="background-image: url('images/dist/artem.jpg')"
                             href="https://www.youtube.com/watch?v=yC6ChyTuE6M">
                             <span class="sr-only">
                                 відкрити відео відгук з артемом
@@ -581,8 +591,12 @@
                 </div>
                 <div class="about__inner">
                     <div class="about__left">
-                        <img class="about__img" src="images/vlad.webp" alt="Влад Волинський" data-aos="fade-up"
-                            data-aos-delay="200">
+                        <picture>
+                            <source type="image/avif" srcset="images/dist/vlad.avif">
+                            <source type="image/webp/" srcset="images/dist/vlad.webp">
+                            <img class="about__img" src="images/dist/vlad.png" alt="Влад Волинський" data-aos="fade-up"
+                                data-aos-delay="200">
+                        </picture>
                         <div class="about__name" data-aos="fade-up" data-aos-delay="250">
                             Влад Волинський
                         </div>
@@ -604,8 +618,12 @@
                         </div>
                     </div>
                     <div class="about__right">
-                        <img class="about__img" src="images/lily.webp" alt="Лілія Лобас" data-aos="fade-up"
-                            data-aos-delay="200">
+                        <picture>
+                            <source type="image/avif" srcset="images/dist/lily.avif">
+                            <source type="image/webp/" srcset="images/dist/lily.webp">
+                            <img class="about__img" src="images/dist/lily.png" alt="Лілія Лобас" data-aos="fade-up"
+                                data-aos-delay="200">
+                        </picture>
                         <div class="about__name" data-aos="fade-up" data-aos-delay="250">
                             Лілія Лобас
                         </div>
@@ -842,7 +860,7 @@
                         Опубліковано за згодою клієнта
                     </span>
                 </div>
-                <a class="results__video video" data-fancybox style="background-image: url('images/countdown.webp')"
+                <a class="results__video video" data-fancybox style="background-image: url('images/dist/countdown.jpg')"
                     href="https://www.youtube.com/watch?v=9elw6D3CkEI" data-aos="fade-up" data-aos-delay="350">
                     <span class="sr-only">
                         Відкрити відео відгук з артемом
@@ -1038,8 +1056,12 @@
                         <li class="swiper-slide">
                             <div class="recommendations__wrap">
                                 <div class="recommendations__box">
-                                    <img class="recommendations__img" src="images/recommendations/xenia.webp"
-                                        alt="Білі пластикові двері">
+                                    <picture>
+                                        <source type="image/avif" srcset="images/dist/recommendations/xenia.avif">
+                                        <source type="image/webp/" srcset="images/dist/recommendations/xenia.webp">
+                                        <img class="recommendations__img" src="images/dist/recommendations/xenia.jpg"
+                                            alt="Білі пластикові двері">
+                                    </picture>
                                     <h3 class="recommendations__subtitle title">
                                         Ксенія Демкова
                                     </h3>
@@ -1113,8 +1135,12 @@
                         <li class="swiper-slide">
                             <div class="recommendations__wrap">
                                 <div class="recommendations__box">
-                                    <img class="recommendations__img" src="images/recommendations/natalia.webp"
-                                        alt="Білі пластикові двері">
+                                    <picture>
+                                        <source type="image/avif" srcset="images/dist/recommendations/natalia.avif">
+                                        <source type="image/webp/" srcset="images/dist/recommendations/natalia.webp">
+                                        <img class="recommendations__img" src="images/dist/recommendations/natalia.jpg"
+                                            alt="Білі пластикові двері">
+                                    </picture>
                                     <h3 class="recommendations__subtitle title">
                                         Наталья Брим
                                     </h3>
@@ -1184,8 +1210,12 @@
                         <li class="swiper-slide">
                             <div class="recommendations__wrap">
                                 <div class="recommendations__box">
-                                    <img class="recommendations__img" src="images/recommendations/oleksandr.webp"
-                                        alt="Білі пластикові двері">
+                                    <picture>
+                                        <source type="image/avif" srcset="images/dist/recommendations/oleksandr.avif">
+                                        <source type="image/webp/" srcset="images/dist/recommendations/oleksandr.webp">
+                                        <img class="recommendations__img"
+                                            src="images/dist/recommendations/oleksandr.jpg" alt="Білі пластикові двері">
+                                    </picture>
                                     <h3 class="recommendations__subtitle title">
                                         Олександр Ляховець
                                     </h3>
@@ -1216,8 +1246,12 @@
                         <li class="swiper-slide">
                             <div class="recommendations__wrap">
                                 <div class="recommendations__box">
-                                    <img class="recommendations__img" src="images/recommendations/evgeny.webp"
-                                        alt="Білі пластикові двері">
+                                    <picture>
+                                        <source type="image/avif" srcset="images/dist/recommendations/evgeny.avif">
+                                        <source type="image/webp/" srcset="images/dist/recommendations/evgeny.webp">
+                                        <img class="recommendations__img" src="images/dist/recommendations/evgeny.jpg"
+                                            alt="Білі пластикові двері">
+                                    </picture>
                                     <h3 class="recommendations__subtitle title">
                                         Евгений Тепляков
                                     </h3>
@@ -1251,8 +1285,12 @@
                         <li class="swiper-slide">
                             <div class="recommendations__wrap">
                                 <div class="recommendations__box">
-                                    <img class="recommendations__img" src="images/recommendations/maryana.webp"
-                                        alt="Білі пластикові двері">
+                                    <picture>
+                                        <source type="image/avif" srcset="images/dist/recommendations/maryana.avif">
+                                        <source type="image/webp/" srcset="images/dist/recommendations/maryana.webp">
+                                        <img class="recommendations__img" src="images/dist/recommendations/maryana.jpg"
+                                            alt="Білі пластикові двері">
+                                    </picture>
                                     <h3 class="recommendations__subtitle title">
                                         Марʼяна Кілікіевська (Чучак)
                                     </h3>
@@ -1285,8 +1323,12 @@
                         <li class="swiper-slide">
                             <div class="recommendations__wrap">
                                 <div class="recommendations__box">
-                                    <img class="recommendations__img" src="images/recommendations/anna.webp"
-                                        alt="Білі пластикові двері">
+                                    <picture>
+                                        <source type="image/avif" srcset="images/dist/recommendations/anna.avif">
+                                        <source type="image/webp/" srcset="images/dist/recommendations/anna.webp">
+                                        <img class="recommendations__img" src="images/dist/recommendations/anna.jpg"
+                                            alt="Білі пластикові двері">
+                                    </picture>
                                     <h3 class="recommendations__subtitle title">
                                         Анна Семенова
                                     </h3>
@@ -1363,7 +1405,11 @@
         <div class="container">
             <div class="footer__wrapper">
                 <a class="footer__logo logo" href="#">
-                    <img class="logo__footer" src="images/logo.webp" alt="logo">
+                    <picture>
+                        <source srcset="images/dist/logo.avif" type="image/avif">
+                        <source srcset="images/dist/logo.webp" type="image/webp">
+                        <img class="logo__footer" src="images/dist/logo.png" alt="logo">
+                    </picture>
                 </a>
                 <div class="footer__box">
                     <div class="footer__city">
@@ -1381,9 +1427,9 @@
                     <div class="footer__text">
                         Telegram
                     </div>
-                    <div class="footer__mail">
+                    <a class="footer__red" href="mailto:treefamily@gmail.com">
                         treefamily@gmail.com
-                    </div>
+                    </a>
                 </div>
             </div>
             <ul class="social">
@@ -1538,4 +1584,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20230903211923"></script>
     <script src="js/main.min.js?_v=20230922022046"></script>
 </body>
+
 </html>
